@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
+import Icon from "./Icon";
 
 export default function Header() {
   const location = useLocation();
@@ -25,9 +26,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between text-center overflow-x-auto scrollbar-none">
           <div className="w-full flex items-center justify-center gap-2 sm:gap-3 text-center whitespace-nowrap">
             <span className="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary-fixed font-semibold tracking-wide uppercase">
-              <span className="material-symbols-outlined text-sm text-tertiary-fixed">
-                verified
-              </span>
+              <Icon name="verified" className="text-sm text-tertiary-fixed" />
               Guaranteed Airport Pickup
             </span>
             <span className="text-on-primary-container/40 text-xs hidden sm:inline">
@@ -122,9 +121,7 @@ export default function Header() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <span className="material-symbols-outlined text-lg leading-none">
-                chat
-              </span>
+              <Icon name="whatsapp" className="text-lg leading-none" />
               <span className="hidden xs:inline">Book via WhatsApp</span>
             </a>
 
@@ -135,9 +132,7 @@ export default function Header() {
               className="lg:hidden p-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors"
               aria-label="Toggle navigation menu"
             >
-              <span className="material-symbols-outlined text-2xl leading-none">
-                {mobileMenuOpen ? "close" : "menu"}
-              </span>
+              <Icon name={mobileMenuOpen ? "close" : "menu"} className="text-2xl leading-none" />
             </button>
           </div>
         </div>
@@ -160,9 +155,7 @@ export default function Header() {
                 >
                   <span>{link.name}</span>
                   {active && (
-                    <span className="material-symbols-outlined text-secondary text-base">
-                      chevron_right
-                    </span>
+                    <Icon name="chevron_right" className="text-secondary text-base" />
                   )}
                 </Link>
               );

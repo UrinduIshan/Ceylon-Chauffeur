@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
+import Icon from "../components/Icon";
 
 export default function Contact() {
   const [guestName, setGuestName] = useState("Sarah Jenkins");
@@ -184,7 +185,7 @@ export default function Contact() {
           <div className="flex flex-wrap items-center gap-3 animate-fade-in-up animation-delay-200">
             <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 border border-surface-container transition-all duration-300 group cursor-default">
               <div className="w-10 h-10 rounded-xl bg-secondary/15 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-2xl">avg_pace</span>
+                <Icon className="text-2xl">avg_pace</Icon>
               </div>
               <div className="flex flex-col">
                 <span className="font-label-sm text-label-sm text-on-surface-variant">Avg. Response Time</span>
@@ -196,7 +197,7 @@ export default function Contact() {
 
             <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 border border-surface-container transition-all duration-300 group cursor-default">
               <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-2xl">verified_user</span>
+                <Icon className="text-2xl">verified_user</Icon>
               </div>
               <div className="flex flex-col">
                 <span className="font-label-sm text-label-sm text-on-surface-variant">Arrival Assurance</span>
@@ -246,7 +247,7 @@ export default function Contact() {
               style={{ transitionDelay: `${idx * 60}ms` }}
             >
               <div className="p-2 rounded-xl bg-surface-container text-secondary group-hover:bg-secondary group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shrink-0 shadow-sm">
-                <span className="material-symbols-outlined text-xl leading-none">{item.icon}</span>
+                <Icon className="text-xl leading-none">{item.icon}</Icon>
               </div>
               <div className="flex flex-col min-w-0">
                 <span className="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-secondary transition-colors">
@@ -309,7 +310,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
                   <span>WhatsApp Direct Line</span>
                   <span className="text-[#007A3D] font-semibold flex items-center gap-1">
-                    <span className="material-symbols-outlined text-sm animate-pulse-subtle">bolt</span>
+                    <Icon className="text-sm animate-pulse-subtle">bolt</Icon>
                     &lt; 3 min reply
                   </span>
                 </div>
@@ -328,9 +329,7 @@ export default function Contact() {
                 target="_blank"
               >
                 <div className="shine-effect" />
-                <span className="material-symbols-outlined text-2xl leading-none group-hover/btn:rotate-12 transition-transform duration-300">
-                  chat
-                </span>
+                <Icon className="text-2xl leading-none group-hover/btn:rotate-12 transition-transform duration-300">chat</Icon>
                 <span>Chat on WhatsApp Now</span>
               </a>
             </div>
@@ -341,7 +340,7 @@ export default function Contact() {
               style={{ transitionDelay: "100ms" }}
             >
               <div className="p-3.5 rounded-2xl bg-surface-container text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shrink-0 shadow-sm">
-                <span className="material-symbols-outlined text-2xl leading-none">call</span>
+                <Icon className="text-2xl leading-none">call</Icon>
               </div>
               <div className="flex flex-col gap-1 w-full">
                 <div className="flex items-center justify-between">
@@ -360,14 +359,14 @@ export default function Contact() {
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-secondary hover:text-white hover:scale-105 active:scale-95 transition-all duration-200"
                     href={`tel:${DRIVER_INFO.phone}`}
                   >
-                    <span className="material-symbols-outlined text-base">phone_in_talk</span>
+                    <Icon className="text-base">phone_in_talk</Icon>
                     {DRIVER_INFO.displayPhone}
                   </a>
                   <a
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-secondary hover:text-white hover:scale-105 active:scale-95 transition-all duration-200"
                     href={`tel:${DRIVER_INFO.officePhone.replace(/\s+/g, "")}`}
                   >
-                    <span className="material-symbols-outlined text-base">deskphone</span>
+                    <Icon className="text-base">deskphone</Icon>
                     {DRIVER_INFO.officePhone}
                   </a>
                 </div>
@@ -380,7 +379,7 @@ export default function Contact() {
               style={{ transitionDelay: "200ms" }}
             >
               <div className="p-3.5 rounded-2xl bg-surface-container text-secondary group-hover:bg-secondary group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shrink-0 shadow-sm">
-                <span className="material-symbols-outlined text-2xl leading-none">mail</span>
+                <Icon className="text-2xl leading-none">mail</Icon>
               </div>
               <div className="flex flex-col gap-1 w-full">
                 <h4 className="font-title-md text-title-md text-on-surface font-semibold group-hover:text-secondary transition-colors">
@@ -394,18 +393,14 @@ export default function Contact() {
                     className="text-secondary hover:text-primary flex items-center gap-1.5 transition-colors group/link"
                     href={`mailto:${DRIVER_INFO.email}`}
                   >
-                    <span className="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">
-                      outgoing_mail
-                    </span>
+                    <Icon className="text-base group-hover/link:translate-x-0.5 transition-transform">outgoing_mail</Icon>
                     {DRIVER_INFO.email}
                   </a>
                   <a
                     className="text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-colors group/link"
                     href={`mailto:${DRIVER_INFO.infoEmail}`}
                   >
-                    <span className="material-symbols-outlined text-base group-hover/link:translate-x-0.5 transition-transform">
-                      alternate_email
-                    </span>
+                    <Icon className="text-base group-hover/link:translate-x-0.5 transition-transform">alternate_email</Icon>
                     {DRIVER_INFO.infoEmail}
                   </a>
                 </div>
@@ -420,7 +415,7 @@ export default function Contact() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-xl bg-secondary/15 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined text-xl">location_on</span>
+                    <Icon className="text-xl">location_on</Icon>
                   </div>
                   <h4 className="font-title-md text-title-md text-on-surface font-semibold group-hover:text-secondary transition-colors">
                     Operating Hub &amp; Service Coverage
@@ -459,7 +454,7 @@ export default function Contact() {
               style={{ transitionDelay: "400ms" }}
             >
               <div className="flex items-center gap-2.5">
-                <span className="material-symbols-outlined text-primary text-2xl">payments</span>
+                <Icon className="text-primary text-2xl">payments</Icon>
                 <h4 className="font-title-md text-title-md text-on-surface font-semibold">
                   Zero Prepayment • Pay Upon Arrival
                 </h4>
@@ -488,15 +483,15 @@ export default function Contact() {
                 </span>
                 <div className="flex flex-wrap gap-2 text-on-surface font-label-sm text-label-sm">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
-                    <span className="material-symbols-outlined text-sm text-secondary">account_balance_wallet</span>
+                    <Icon className="text-sm text-secondary">account_balance_wallet</Icon>
                     Wise Transfer
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
-                    <span className="material-symbols-outlined text-sm text-secondary">credit_card</span>
+                    <Icon className="text-sm text-secondary">credit_card</Icon>
                     Revolut
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
-                    <span className="material-symbols-outlined text-sm text-secondary">contactless</span>
+                    <Icon className="text-sm text-secondary">contactless</Icon>
                     Visa / Mastercard Terminal
                   </span>
                 </div>
@@ -511,11 +506,11 @@ export default function Contact() {
               <div className="flex flex-col gap-2 pb-2 relative z-10">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-sm animate-pulse-subtle">calculate</span>
+                    <Icon className="text-sm animate-pulse-subtle">calculate</Icon>
                     Fast Fare Calculation
                   </span>
                   <span className="font-label-sm text-label-sm text-[#007A3D] font-semibold flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#25D366]/10">
-                    <span className="material-symbols-outlined text-sm">lock</span>SSL Secure Request
+                    <Icon className="text-sm">lock</Icon>SSL Secure Request
                   </span>
                 </div>
                 <h2 className="font-headline-md text-headline-md text-primary font-bold">
@@ -532,7 +527,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="guest-name">
-                      <span className="material-symbols-outlined text-sm text-secondary">person</span>
+                      <Icon className="text-sm text-secondary">person</Icon>
                       Passenger Full Name *
                     </label>
                     <div className="relative">
@@ -550,7 +545,7 @@ export default function Contact() {
 
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="guest-country">
-                      <span className="material-symbols-outlined text-sm text-secondary">public</span>
+                      <Icon className="text-sm text-secondary">public</Icon>
                       Nationality / Country *
                     </label>
                     <div className="relative">
@@ -570,7 +565,7 @@ export default function Contact() {
                 {/* Field 2: WhatsApp Number */}
                 <div className="flex flex-col gap-1.5">
                   <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="guest-phone">
-                    <span className="material-symbols-outlined text-sm text-secondary">phone</span>
+                    <Icon className="text-sm text-secondary">phone</Icon>
                     WhatsApp Mobile Number (with country code) *
                   </label>
                   <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
@@ -609,7 +604,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="pickup-loc">
-                      <span className="material-symbols-outlined text-sm text-secondary">flight_land</span>
+                      <Icon className="text-sm text-secondary">flight_land</Icon>
                       Pick-up Location *
                     </label>
                     <div className="relative">
@@ -639,7 +634,7 @@ export default function Contact() {
 
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="dropoff-loc">
-                      <span className="material-symbols-outlined text-sm text-secondary">location_on</span>
+                      <Icon className="text-sm text-secondary">location_on</Icon>
                       Drop-off Destination *
                     </label>
                     <div className="relative">
@@ -677,7 +672,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="travel-date">
-                      <span className="material-symbols-outlined text-sm text-secondary">calendar_today</span>
+                      <Icon className="text-sm text-secondary">calendar_today</Icon>
                       Pickup Date *
                     </label>
                     <div className="relative">
@@ -694,7 +689,7 @@ export default function Contact() {
 
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="pickup-time">
-                      <span className="material-symbols-outlined text-sm text-secondary">schedule</span>
+                      <Icon className="text-sm text-secondary">schedule</Icon>
                       Flight Arrival / Pickup Time *
                     </label>
                     <div className="relative">
@@ -714,7 +709,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="passenger-count">
-                      <span className="material-symbols-outlined text-sm text-secondary">group</span>
+                      <Icon className="text-sm text-secondary">group</Icon>
                       Adult / Child Passengers
                     </label>
                     <div className="relative">
@@ -734,7 +729,7 @@ export default function Contact() {
 
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1" htmlFor="luggage-count">
-                      <span className="material-symbols-outlined text-sm text-secondary">luggage</span>
+                      <Icon className="text-sm text-secondary">luggage</Icon>
                       Luggage Load
                     </label>
                     <div className="relative">
@@ -799,7 +794,7 @@ export default function Contact() {
                           onChange={(e) => amenity.setter(e.target.checked)}
                           className="w-4 h-4 rounded text-secondary focus:ring-secondary accent-secondary"
                         />
-                        <span className="material-symbols-outlined text-base text-secondary">{amenity.icon}</span>
+                        <Icon className="text-base text-secondary">{amenity.icon}</Icon>
                         <span className="font-body-sm text-body-sm text-on-surface font-medium">{amenity.label}</span>
                       </label>
                     ))}
@@ -810,7 +805,7 @@ export default function Contact() {
                 <div className="rounded-2xl p-5 bg-surface-container-low border border-surface-container flex flex-col gap-3 relative overflow-hidden">
                   <div className="flex items-center justify-between">
                     <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-sm text-[#007A3D]">visibility</span>
+                      <Icon className="text-sm text-[#007A3D]">visibility</Icon>
                       Live WhatsApp Message Preview
                     </span>
                     <span className="font-label-sm text-label-sm text-[#007A3D] font-bold flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#25D366]/10 animate-pulse-subtle">
@@ -823,7 +818,7 @@ export default function Contact() {
                   </div>
                   <div className="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
                     <span className="flex items-center gap-1">
-                      <span className="material-symbols-outlined text-xs text-secondary">check</span>
+                      <Icon className="text-xs text-secondary">check</Icon>
                       Includes all Highway Tolls &amp; Petrol
                     </span>
                     <span className="text-[#007A3D] font-medium">Ready to send directly</span>
@@ -838,9 +833,7 @@ export default function Contact() {
                     className="flex-1 inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-[#25D366] text-white font-label-lg text-label-lg font-bold shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:brightness-110 active:scale-95 transition-all whatsapp-pulse group/btn relative overflow-hidden"
                   >
                     <div className="shine-effect" />
-                    <span className="material-symbols-outlined text-2xl leading-none group-hover/btn:rotate-12 transition-transform duration-300">
-                      chat
-                    </span>
+                    <Icon className="text-2xl leading-none group-hover/btn:rotate-12 transition-transform duration-300">chat</Icon>
                     <span>Send Booking Request via WhatsApp</span>
                   </button>
                   <button
@@ -851,9 +844,7 @@ export default function Contact() {
                         : "bg-primary text-on-primary hover:bg-secondary hover:shadow-lg"
                     }`}
                   >
-                    <span className="material-symbols-outlined text-xl leading-none">
-                      {formSubmitted ? "check" : "send"}
-                    </span>
+                    <Icon className="text-xl leading-none">{formSubmitted ? "check" : "send"}</Icon>
                     <span>{formSubmitted ? "Submitted ✓" : "Submit Form"}</span>
                   </button>
                 </div>
@@ -861,9 +852,7 @@ export default function Contact() {
                 {/* Confirmation Message */}
                 {formSubmitted && (
                   <div className="p-4 rounded-2xl bg-secondary/10 border border-secondary/30 text-on-surface flex items-start gap-3 animate-fade-in-up">
-                    <span className="material-symbols-outlined text-secondary text-2xl animate-bounce">
-                      check_circle
-                    </span>
+                    <Icon className="text-secondary text-2xl animate-bounce">check_circle</Icon>
                     <div className="flex flex-col">
                       <span className="font-label-lg text-label-lg font-bold text-secondary">Inquiry Received!</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">
@@ -902,9 +891,7 @@ export default function Contact() {
                 to="/about-us-vehicle"
               >
                 <span>Inspect Vehicle Specs</span>
-                <span className="material-symbols-outlined text-base group-hover/link:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
+                <Icon className="text-base group-hover/link:translate-x-1 transition-transform">arrow_forward</Icon>
               </Link>
             </div>
           </div>
@@ -949,13 +936,13 @@ export default function Contact() {
                       </span>
                       {faq.q}
                     </span>
-                    <span
-                      className={`material-symbols-outlined text-outline transition-transform duration-300 shrink-0 ${
+                    <Icon
+                      className={`text-outline transition-transform duration-300 shrink-0 ${
                         isOpen ? "rotate-180 text-secondary" : "group-hover/btn:text-secondary"
                       }`}
                     >
                       expand_more
-                    </span>
+                    </Icon>
                   </button>
                   {isOpen && (
                     <div className="px-5 sm:px-6 pb-6 pt-1 text-on-surface-variant font-body-md text-body-md leading-relaxed animate-fadeIn border-t border-surface-container/60">
@@ -971,7 +958,7 @@ export default function Contact() {
           <div className="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left reveal-on-scroll group">
             <div className="flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform shrink-0">
-                <span className="material-symbols-outlined text-2xl">help_center</span>
+                <Icon className="text-2xl">help_center</Icon>
               </div>
               <span className="font-body-md text-body-md text-on-surface">
                 Have a custom question about child seats, itinerary feasibility, or hill country roads?
@@ -984,7 +971,7 @@ export default function Contact() {
               target="_blank"
             >
               <span>Ask Harindu on WhatsApp</span>
-              <span className="material-symbols-outlined text-base">arrow_forward</span>
+              <Icon className="text-base">arrow_forward</Icon>
             </a>
           </div>
         </div>
@@ -1021,11 +1008,11 @@ export default function Contact() {
               </p>
               <div className="flex flex-wrap items-center gap-4 text-white font-label-sm text-label-sm pt-2">
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#25D366] text-base">timer</span>
+                  <Icon className="text-[#25D366] text-base">timer</Icon>
                   Replies within 3 minutes
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#25D366] text-base">lock_open</span>
+                  <Icon className="text-[#25D366] text-base">lock_open</Icon>
                   Pay upon arrival safely
                 </span>
               </div>
@@ -1038,18 +1025,16 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="material-symbols-outlined text-2xl">chat</span>
+                <Icon className="text-2xl">chat</Icon>
                 <span>Chat with Harindu</span>
               </a>
               <Link
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-high/20 hover:bg-surface-container-high/30 text-white font-label-md text-label-md font-semibold transition-all text-center group hover:scale-105 active:scale-95 duration-200 border border-white/10"
                 to="/services-tours"
               >
-                <span className="material-symbols-outlined text-lg">explore</span>
+                <Icon className="text-lg">explore</Icon>
                 <span>View Tours &amp; Rates</span>
-                <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
+                <Icon className="text-base group-hover:translate-x-1 transition-transform">arrow_forward</Icon>
               </Link>
             </div>
           </div>

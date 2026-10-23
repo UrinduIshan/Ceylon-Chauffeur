@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
+import Icon from "../components/Icon";
 
 const TESTIMONIALS = [
   {
@@ -160,11 +161,11 @@ export default function Home() {
           {/* Trust Rating Pill */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest/15 backdrop-blur-md text-surface-bright shadow-sm mb-6 border border-white/10 animate-fade-in-down animation-delay-100 hover:scale-105 transition-all duration-300">
             <span className="flex items-center text-secondary-container text-sm">
-              <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-              <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-              <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-              <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-              <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+              <Icon className="text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</Icon>
+              <Icon className="text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</Icon>
+              <Icon className="text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</Icon>
+              <Icon className="text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</Icon>
+              <Icon className="text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</Icon>
             </span>
             <span className="font-label-md text-label-md font-semibold tracking-wide">
               4.98/5 Rated by 420+ Global Travelers
@@ -189,7 +190,7 @@ export default function Home() {
               href="#plan-journey"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-container/90 font-label-lg text-label-lg font-bold shadow-lg hover:shadow-secondary-container/30 transition-all hover:scale-105 active:scale-95 duration-200"
             >
-              <span className="material-symbols-outlined text-xl">commute</span>
+              <Icon className="text-xl">commute</Icon>
               Plan Your Journey
             </a>
             <a
@@ -198,7 +199,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-lowest/15 backdrop-blur-md text-surface-bright border border-white/20 hover:bg-surface-container-lowest/25 font-label-lg text-label-lg font-semibold transition-all hover:scale-105 active:scale-95 duration-200"
             >
-              <span className="material-symbols-outlined text-tertiary-fixed">chat</span>
+              <Icon name="whatsapp" className="text-tertiary-fixed text-lg" />
               Book via WhatsApp
             </a>
           </div>
@@ -214,9 +215,7 @@ export default function Home() {
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-[11px] font-semibold text-inverse-primary group-hover:text-surface-bright transition-colors">
               Plan Your Journey Below
             </span>
-            <span className="material-symbols-outlined text-2xl group-hover:translate-y-1.5 transition-transform animate-bounce text-secondary-fixed">
-              keyboard_arrow_down
-            </span>
+            <Icon className="text-2xl group-hover:translate-y-1.5 transition-transform animate-bounce text-secondary-fixed">keyboard_arrow_down</Icon>
           </a>
         </div>
       </section>
@@ -240,7 +239,7 @@ export default function Home() {
           <div className="w-full bg-surface-container-lowest rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500 p-4 sm:p-6 lg:p-8 text-on-surface text-left border border-surface-container-high/40 reveal-on-scroll" style={{ transitionDelay: "100ms" }}>
             <div className="flex items-center justify-between pb-4 mb-6 bg-surface-container-low px-4 py-3 rounded-xl">
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-secondary font-bold">commute</span>
+                <Icon className="text-secondary font-bold">commute</Icon>
                 <span className="font-headline-sm text-headline-sm text-on-surface">Plan Your Journey</span>
               </div>
               <span className="font-label-sm text-label-sm px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">
@@ -252,7 +251,7 @@ export default function Home() {
               {/* Pickup Location */}
               <div className="flex flex-col gap-1.5">
                 <label className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 font-semibold" htmlFor="home-pickup">
-                  <span className="material-symbols-outlined text-xs text-secondary">my_location</span> Pick-up Location
+                  <Icon className="text-xs text-secondary">my_location</Icon> Pick-up Location
                 </label>
                 <div className="relative">
                   <select
@@ -267,14 +266,14 @@ export default function Home() {
                     <option value="Kandy City">Kandy Cultural Hub</option>
                     <option value="Galle Fort">Galle Fort</option>
                   </select>
-                  <span className="material-symbols-outlined absolute right-3 top-3.5 text-on-surface-variant pointer-events-none text-base">expand_more</span>
+                  <Icon className="absolute right-3 top-3.5 text-on-surface-variant pointer-events-none text-base">expand_more</Icon>
                 </div>
               </div>
 
               {/* Drop-off Destination */}
               <div className="flex flex-col gap-1.5">
                 <label className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 font-semibold" htmlFor="home-dropoff">
-                  <span className="material-symbols-outlined text-xs text-secondary">pin_drop</span> Drop-off Destination
+                  <Icon className="text-xs text-secondary">pin_drop</Icon> Drop-off Destination
                 </label>
                 <div className="relative">
                   <select
@@ -290,14 +289,14 @@ export default function Home() {
                     <option value="Ella &amp; Nuwara Eliya">Ella &amp; Nuwara Eliya (Tea Highlands)</option>
                     <option value="Custom Island Tour">Custom Multi-Day Tour Itinerary</option>
                   </select>
-                  <span className="material-symbols-outlined absolute right-3 top-3.5 text-on-surface-variant pointer-events-none text-base">expand_more</span>
+                  <Icon className="absolute right-3 top-3.5 text-on-surface-variant pointer-events-none text-base">expand_more</Icon>
                 </div>
               </div>
 
               {/* Travel Date */}
               <div className="flex flex-col gap-1.5">
                 <label className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 font-semibold" htmlFor="home-date">
-                  <span className="material-symbols-outlined text-xs text-secondary">calendar_month</span> Travel Date &amp; Flight
+                  <Icon className="text-xs text-secondary">calendar_month</Icon> Travel Date &amp; Flight
                 </label>
                 <input
                   id="home-date"
@@ -311,7 +310,7 @@ export default function Home() {
               {/* Passengers & Luggage */}
               <div className="flex flex-col gap-1.5">
                 <label className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 font-semibold" htmlFor="home-passengers">
-                  <span className="material-symbols-outlined text-xs text-secondary">group</span> Travelers &amp; Luggage
+                  <Icon className="text-xs text-secondary">group</Icon> Travelers &amp; Luggage
                 </label>
                 <div className="relative">
                   <select
@@ -324,7 +323,7 @@ export default function Home() {
                     <option value="3 Guests (2 Large + 2 Small)">3 Guests (2 Large + 2 Small)</option>
                     <option value="4 Guests (Light Luggage)">4 Guests (Light Bags)</option>
                   </select>
-                  <span className="material-symbols-outlined absolute right-3 top-3.5 text-on-surface-variant pointer-events-none text-base">expand_more</span>
+                  <Icon className="absolute right-3 top-3.5 text-on-surface-variant pointer-events-none text-base">expand_more</Icon>
                 </div>
               </div>
             </form>
@@ -333,7 +332,7 @@ export default function Home() {
             <div className="mt-6 pt-5 bg-surface-container rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-primary">
-                  <span className="material-symbols-outlined text-xl">bolt</span>
+                  <Icon className="text-xl">bolt</Icon>
                 </div>
                 <div>
                   <p className="font-label-md text-label-md text-on-surface font-bold">
@@ -357,14 +356,14 @@ export default function Home() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <span className="material-symbols-outlined text-tertiary-fixed">chat</span>
+                  <Icon name="whatsapp" className="text-tertiary-fixed text-lg" />
                   Book via WhatsApp
                 </a>
                 <Link
                   className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-label-lg text-label-lg font-semibold hover:scale-105 active:scale-95 transition-all duration-200"
                   to="/services-tours"
                 >
-                  <span className="material-symbols-outlined text-base">travel_explore</span>
+                  <Icon className="text-base">travel_explore</Icon>
                   Tour Packages
                 </Link>
               </div>
@@ -379,7 +378,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low group hover:bg-surface-container hover:-translate-y-1 hover:shadow-md transition-all duration-300 reveal-on-scroll">
               <div className="p-2.5 rounded-lg bg-surface-container-highest text-secondary shrink-0 group-hover:scale-110 group-hover:bg-secondary/10 transition-all duration-300">
-                <span className="material-symbols-outlined text-2xl">flight_land</span>
+                <Icon className="text-2xl">flight_land</Icon>
               </div>
               <div>
                 <h4 className="font-label-lg text-label-lg font-bold text-on-surface">24/7 Airport Meet &amp; Greet</h4>
@@ -389,7 +388,7 @@ export default function Home() {
 
             <div className="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low group hover:bg-surface-container hover:-translate-y-1 hover:shadow-md transition-all duration-300 reveal-on-scroll" style={{ transitionDelay: "80ms" }}>
               <div className="p-2.5 rounded-lg bg-surface-container-highest text-secondary shrink-0 group-hover:scale-110 group-hover:bg-secondary/10 transition-all duration-300">
-                <span className="material-symbols-outlined text-2xl">receipt_long</span>
+                <Icon className="text-2xl">receipt_long</Icon>
               </div>
               <div>
                 <h4 className="font-label-lg text-label-lg font-bold text-on-surface">100% Fixed Transparent Fares</h4>
@@ -399,7 +398,7 @@ export default function Home() {
 
             <div className="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low group hover:bg-surface-container hover:-translate-y-1 hover:shadow-md transition-all duration-300 reveal-on-scroll" style={{ transitionDelay: "160ms" }}>
               <div className="p-2.5 rounded-lg bg-surface-container-highest text-secondary shrink-0 group-hover:scale-110 group-hover:bg-secondary/10 transition-all duration-300">
-                <span className="material-symbols-outlined text-2xl">verified_user</span>
+                <Icon className="text-2xl">verified_user</Icon>
               </div>
               <div>
                 <h4 className="font-label-lg text-label-lg font-bold text-on-surface">SLTDA Certified Guide</h4>
@@ -409,7 +408,7 @@ export default function Home() {
 
             <div className="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low group hover:bg-surface-container hover:-translate-y-1 hover:shadow-md transition-all duration-300 reveal-on-scroll" style={{ transitionDelay: "240ms" }}>
               <div className="p-2.5 rounded-lg bg-surface-container-highest text-secondary shrink-0 group-hover:scale-110 group-hover:bg-secondary/10 transition-all duration-300">
-                <span className="material-symbols-outlined text-2xl">energy_savings_leaf</span>
+                <Icon className="text-2xl">energy_savings_leaf</Icon>
               </div>
               <div>
                 <h4 className="font-label-lg text-label-lg font-bold text-on-surface">Eco Hybrid Prius Comfort</h4>
@@ -437,7 +436,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="flex flex-col bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1.5 border border-transparent hover:border-secondary/20 transition-all duration-300 group reveal-on-scroll">
             <div className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary mb-6 group-hover:scale-110 group-hover:bg-secondary/10 transition-all duration-300">
-              <span className="material-symbols-outlined text-2xl">ac_unit</span>
+              <Icon className="text-2xl">ac_unit</Icon>
             </div>
             <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">Whisper-Quiet Hybrid</h3>
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -445,14 +444,14 @@ export default function Home() {
             </p>
             <div className="mt-6 pt-4 bg-surface-container-low rounded-lg p-3 group-hover:bg-surface-container transition-colors duration-300">
               <span className="font-label-sm text-label-sm font-semibold text-on-surface flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-xs text-secondary-container">luggage</span> 3 Large Suitcases + Carry-ons
+                <Icon className="text-xs text-secondary-container">luggage</Icon> 3 Large Suitcases + Carry-ons
               </span>
             </div>
           </div>
 
           <div className="flex flex-col bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1.5 border border-transparent hover:border-secondary/20 transition-all duration-300 group reveal-on-scroll" style={{ transitionDelay: "100ms" }}>
             <div className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary mb-6 group-hover:scale-110 group-hover:bg-secondary/10 transition-all duration-300">
-              <span className="material-symbols-outlined text-2xl">health_and_safety</span>
+              <Icon className="text-2xl">health_and_safety</Icon>
             </div>
             <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">12+ Years Safe Driving</h3>
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -460,14 +459,14 @@ export default function Home() {
             </p>
             <div className="mt-6 pt-4 bg-surface-container-low rounded-lg p-3 group-hover:bg-surface-container transition-colors duration-300">
               <span className="font-label-sm text-label-sm font-semibold text-on-surface flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-xs text-secondary-container">check_circle</span> 100% Incident-Free Record
+                <Icon className="text-xs text-secondary-container">check_circle</Icon> 100% Incident-Free Record
               </span>
             </div>
           </div>
 
           <div className="flex flex-col bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1.5 border border-transparent hover:border-secondary/20 transition-all duration-300 group reveal-on-scroll" style={{ transitionDelay: "200ms" }}>
             <div className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary mb-6 group-hover:scale-110 group-hover:bg-secondary/10 transition-all duration-300">
-              <span className="material-symbols-outlined text-2xl">price_check</span>
+              <Icon className="text-2xl">price_check</Icon>
             </div>
             <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">Fixed All-Inclusive Fares</h3>
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -475,14 +474,14 @@ export default function Home() {
             </p>
             <div className="mt-6 pt-4 bg-surface-container-low rounded-lg p-3 group-hover:bg-surface-container transition-colors duration-300">
               <span className="font-label-sm text-label-sm font-semibold text-on-surface flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-xs text-secondary-container">toll</span> Expressway Tickets Included
+                <Icon className="text-xs text-secondary-container">toll</Icon> Expressway Tickets Included
               </span>
             </div>
           </div>
 
           <div className="flex flex-col bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1.5 border border-transparent hover:border-secondary/20 transition-all duration-300 group reveal-on-scroll" style={{ transitionDelay: "300ms" }}>
             <div className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary mb-6 group-hover:scale-110 group-hover:bg-secondary/10 transition-all duration-300">
-              <span className="material-symbols-outlined text-2xl">schedule</span>
+              <Icon className="text-2xl">schedule</Icon>
             </div>
             <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">Guaranteed BIA Pickups</h3>
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -490,7 +489,7 @@ export default function Home() {
             </p>
             <div className="mt-6 pt-4 bg-surface-container-low rounded-lg p-3 group-hover:bg-surface-container transition-colors duration-300">
               <span className="font-label-sm text-label-sm font-semibold text-on-surface flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-xs text-secondary-container">timer</span> 60-Minute Free Waiting Window
+                <Icon className="text-xs text-secondary-container">timer</Icon> 60-Minute Free Waiting Window
               </span>
             </div>
           </div>
@@ -531,13 +530,13 @@ export default function Home() {
                 </p>
                 <ul className="my-5 flex flex-col gap-2 font-body-sm text-body-sm text-on-surface">
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Live Flight Tracking Included
+                    <Icon className="text-secondary text-base">check</Icon> Live Flight Tracking Included
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Direct Expressway Highway Routes
+                    <Icon className="text-secondary text-base">check</Icon> Direct Expressway Highway Routes
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Bottle of Fresh Water Provided
+                    <Icon className="text-secondary text-base">check</Icon> Bottle of Fresh Water Provided
                   </li>
                 </ul>
                 <a
@@ -571,13 +570,13 @@ export default function Home() {
                 </p>
                 <ul className="my-5 flex flex-col gap-2 font-body-sm text-body-sm text-on-surface">
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Custom Day-by-Day Itineraries
+                    <Icon className="text-secondary text-base">check</Icon> Custom Day-by-Day Itineraries
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Driver Room &amp; Meals Covered
+                    <Icon className="text-secondary text-base">check</Icon> Driver Room &amp; Meals Covered
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Authentic Curated Food Stops
+                    <Icon className="text-secondary text-base">check</Icon> Authentic Curated Food Stops
                   </li>
                 </ul>
                 <a
@@ -611,13 +610,13 @@ export default function Home() {
                 </p>
                 <ul className="my-5 flex flex-col gap-2 font-body-sm text-body-sm text-on-surface">
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Flexible Photo &amp; Refreshment Pauses
+                    <Icon className="text-secondary text-base">check</Icon> Flexible Photo &amp; Refreshment Pauses
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Direct Door-to-Door Hotel Drop
+                    <Icon className="text-secondary text-base">check</Icon> Direct Door-to-Door Hotel Drop
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary text-base">check</span> Transparent Flat Day Rates
+                    <Icon className="text-secondary text-base">check</Icon> Transparent Flat Day Rates
                   </li>
                 </ul>
                 <a
@@ -644,7 +643,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex items-center gap-2 mt-4 md:mt-0 font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-3 py-1.5 rounded-full hover:bg-surface-container-high transition-colors duration-200">
-            <span className="material-symbols-outlined text-base text-secondary">info</span>
+            <Icon className="text-base text-secondary">info</Icon>
             Tolls &amp; Fuel Included in All Prices
           </div>
         </div>
@@ -682,7 +681,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Reserve Transfer <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1.5 transition-transform duration-200">arrow_forward</span>
+                Reserve Transfer <Icon className="text-sm group-hover/btn:translate-x-1.5 transition-transform duration-200">arrow_forward</Icon>
               </a>
             </div>
           </div>
@@ -719,7 +718,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Reserve Transfer <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1.5 transition-transform duration-200">arrow_forward</span>
+                Reserve Transfer <Icon className="text-sm group-hover/btn:translate-x-1.5 transition-transform duration-200">arrow_forward</Icon>
               </a>
             </div>
           </div>
@@ -756,7 +755,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Build Itinerary <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1.5 transition-transform duration-200">arrow_forward</span>
+                Build Itinerary <Icon className="text-sm group-hover/btn:translate-x-1.5 transition-transform duration-200">arrow_forward</Icon>
               </a>
             </div>
           </div>
@@ -793,7 +792,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Reserve Transfer <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1.5 transition-transform duration-200">arrow_forward</span>
+                Reserve Transfer <Icon className="text-sm group-hover/btn:translate-x-1.5 transition-transform duration-200">arrow_forward</Icon>
               </a>
             </div>
           </div>
@@ -815,7 +814,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-surface-container-lowest shadow-md px-4 py-2 rounded-xl flex items-center gap-2 animate-gentle-float">
-                  <span className="material-symbols-outlined text-secondary text-xl">verified</span>
+                  <Icon className="text-secondary text-xl">verified</Icon>
                   <div className="flex flex-col">
                     <span className="font-label-sm text-label-sm font-bold text-on-surface">SLTDA Certified</span>
                     <span className="font-body-sm text-body-sm text-on-surface-variant">Govt. Registered Guide</span>
@@ -852,14 +851,14 @@ export default function Home() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <span className="material-symbols-outlined text-tertiary-fixed">chat</span>
+                  <Icon className="text-tertiary-fixed">chat</Icon>
                   Message Harindu Directly
                 </a>
                 <Link
                   className="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface font-semibold hover:text-secondary hover:translate-x-1 transition-all duration-200"
                   to="/about-us-vehicle"
                 >
-                  Vehicle &amp; Chauffeur Profile <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  Vehicle &amp; Chauffeur Profile <Icon className="text-sm">arrow_forward</Icon>
                 </Link>
               </div>
             </div>
@@ -881,7 +880,7 @@ export default function Home() {
             Real firsthand impressions from guests who explored Sri Lanka in our Toyota Prius hybrid with Harindu.
           </p>
           <div className="inline-flex items-center gap-1.5 mt-4 text-xs font-label-sm text-on-surface-variant/80 bg-surface-container-low px-3 py-1 rounded-full">
-            <span className="material-symbols-outlined text-sm text-secondary">pan_tool</span>
+            <Icon className="text-sm text-secondary">pan_tool</Icon>
             <span>Hover on any card to pause rotation</span>
           </div>
         </div>
@@ -904,17 +903,11 @@ export default function Home() {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-1 text-secondary-container group-hover:scale-105 transition-transform duration-300">
                       {[...Array(5)].map((_, i) => (
-                        <span
-                          key={i}
-                          className="material-symbols-outlined text-base"
-                          style={{ fontVariationSettings: "'FILL' 1" }}
-                        >
-                          star
-                        </span>
+                        <Icon key={i} className="text-base" style={{ fontVariationSettings: "'FILL' 1" }}>star</Icon>
                       ))}
                     </div>
                     <span className="text-[11px] font-semibold text-tertiary-fixed-dim bg-tertiary-container/30 px-2 py-0.5 rounded-full flex items-center gap-1">
-                      <span className="material-symbols-outlined text-xs">verified</span> Verified Guest
+                      <Icon className="text-xs">verified</Icon> Verified Guest
                     </span>
                   </div>
 
@@ -931,7 +924,7 @@ export default function Home() {
                       {review.author}
                     </h4>
                     <span className="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
-                      <span className="material-symbols-outlined text-xs text-on-surface-variant">location_on</span>
+                      <Icon className="text-xs text-on-surface-variant">location_on</Icon>
                       {review.location}
                     </span>
                   </div>
@@ -965,13 +958,13 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-6 text-surface-bright font-label-md text-label-md">
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-sm text-secondary-fixed">check_circle</span> Flight Tracker Setup
+                  <Icon className="text-sm text-secondary-fixed">check_circle</Icon> Flight Tracker Setup
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-sm text-secondary-fixed">check_circle</span> Luggage Advice
+                  <Icon className="text-sm text-secondary-fixed">check_circle</Icon> Luggage Advice
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-sm text-secondary-fixed">check_circle</span> Free Cancellation
+                  <Icon className="text-sm text-secondary-fixed">check_circle</Icon> Free Cancellation
                 </span>
               </div>
             </div>
@@ -983,7 +976,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="material-symbols-outlined text-2xl text-tertiary-fixed">chat</span>
+                <Icon className="text-2xl text-tertiary-fixed">chat</Icon>
                 <span>Instant WhatsApp Chat</span>
               </a>
               <span className="text-on-primary-container font-label-sm text-label-sm">

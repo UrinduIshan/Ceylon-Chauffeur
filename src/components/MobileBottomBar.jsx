@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
+import Icon from "./Icon";
 
 export default function MobileBottomBar() {
   return (
@@ -9,7 +10,7 @@ export default function MobileBottomBar() {
         className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold text-center hover:bg-surface-container-highest transition-colors"
         href={`tel:${DRIVER_INFO.phone}`}
       >
-        <span className="material-symbols-outlined text-base">call</span>
+        <Icon name="call" className="text-base" />
         <span>Call Harindu</span>
       </a>
       <a
@@ -18,16 +19,17 @@ export default function MobileBottomBar() {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span className="material-symbols-outlined text-base">chat</span>
+        <Icon name="whatsapp" className="text-base" />
         <span>WhatsApp</span>
       </a>
       <Link
         className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold text-center hover:bg-primary transition-colors"
         to="/contact-booking"
       >
-        <span className="material-symbols-outlined text-base">calculate</span>
+        <Icon name="calculate" className="text-base" />
         <span>Fare Quote</span>
       </Link>
     </div>
   );
 }
+

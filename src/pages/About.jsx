@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
+import Icon from "../components/Icon";
 
 export default function About() {
   const [activeVehicleView, setActiveVehicleView] = useState("exterior"); // 'exterior' | 'interior'
@@ -56,10 +57,10 @@ export default function About() {
             {/* Breadcrumb Navigation */}
             <nav className="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm animate-fade-in-down">
               <Link className="hover:text-primary transition-colors flex items-center gap-1" to="/">
-                <span className="material-symbols-outlined text-sm">home</span>
+                <Icon className="text-sm">home</Icon>
                 <span>Home</span>
               </Link>
-              <span className="material-symbols-outlined text-xs text-outline">chevron_right</span>
+              <Icon className="text-xs text-outline">chevron_right</Icon>
               <span className="text-primary font-semibold">About Us &amp; Vehicle</span>
             </nav>
 
@@ -67,7 +68,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pt-2">
               <div className="animate-fade-in-up animation-delay-100">
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold mb-3 shadow-sm hover:scale-105 transition-transform duration-200">
-                  <span className="material-symbols-outlined text-sm animate-pulse-subtle">verified_user</span>
+                  <Icon className="text-sm animate-pulse-subtle">verified_user</Icon>
                   Authentic Island Hospitality &amp; Fleet Excellence
                 </span>
                 <h1 className="font-display-lg text-display-lg text-primary tracking-tight">
@@ -82,7 +83,7 @@ export default function About() {
               <div className="flex items-center gap-3 shrink-0 animate-fade-in-up animation-delay-200">
                 <div className="flex flex-col items-start md:items-end bg-surface-container-lowest/80 backdrop-blur-sm p-3.5 rounded-2xl shadow-sm border border-surface-container hover:shadow-md transition-shadow">
                   <span className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-                    <span className="material-symbols-outlined text-xs">local_shipping</span>
+                    <Icon className="text-xs">local_shipping</Icon>
                     Dedicated Fleet Status
                   </span>
                   <span className="font-label-lg text-label-lg font-bold text-on-tertiary-container flex items-center gap-2 mt-0.5">
@@ -122,14 +123,12 @@ export default function About() {
                     <div>
                       <h3 className="font-title-md text-title-md text-primary font-bold">{DRIVER_INFO.name}</h3>
                       <p className="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-                        <span className="material-symbols-outlined text-xs text-secondary">verified</span>
+                        <Icon className="text-xs text-secondary">verified</Icon>
                         {DRIVER_INFO.role}
                       </p>
                     </div>
                     <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#25D366]/15 text-[#006622] font-label-sm text-label-sm font-bold shadow-sm hover:scale-105 transition-transform">
-                      <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                        stars
-                      </span>
+                      <Icon className="text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>stars</Icon>
                       {DRIVER_INFO.rating} ({DRIVER_INFO.reviewsCount} Reviews)
                     </span>
                   </div>
@@ -139,9 +138,7 @@ export default function About() {
                 <div className="grid grid-cols-2 gap-2.5 pt-3">
                   <div className="bg-surface-container-low p-3 rounded-xl flex items-center gap-2.5 hover:bg-surface-container hover:-translate-y-1 hover:shadow-md transition-all duration-300 group/badge relative overflow-hidden">
                     <div className="shine-effect" />
-                    <span className="material-symbols-outlined text-secondary text-2xl group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-transform">
-                      badge
-                    </span>
+                    <Icon className="text-secondary text-2xl group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-transform">badge</Icon>
                     <div className="flex flex-col">
                       <span className="font-label-sm text-label-sm font-bold text-on-surface">SLTDA Certified</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">Official Tourist Guide</span>
@@ -150,9 +147,7 @@ export default function About() {
 
                   <div className="bg-surface-container-low p-3 rounded-xl flex items-center gap-2.5 hover:bg-surface-container hover:-translate-y-1 hover:shadow-md transition-all duration-300 group/badge relative overflow-hidden">
                     <div className="shine-effect" />
-                    <span className="material-symbols-outlined text-secondary text-2xl group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-transform">
-                      history_edu
-                    </span>
+                    <Icon className="text-secondary text-2xl group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-transform">history_edu</Icon>
                     <div className="flex flex-col">
                       <span className="font-label-sm text-label-sm font-bold text-on-surface">12+ Years Exp.</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">Islandwide Routes</span>
@@ -161,9 +156,7 @@ export default function About() {
 
                   <div className="bg-surface-container-low p-3 rounded-xl flex items-center gap-2.5 hover:bg-surface-container hover:-translate-y-1 hover:shadow-md transition-all duration-300 group/badge relative overflow-hidden">
                     <div className="shine-effect" />
-                    <span className="material-symbols-outlined text-secondary text-2xl group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-transform">
-                      record_voice_over
-                    </span>
+                    <Icon className="text-secondary text-2xl group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-transform">record_voice_over</Icon>
                     <div className="flex flex-col">
                       <span className="font-label-sm text-label-sm font-bold text-on-surface">Fluent English</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">Clear Communication</span>
@@ -172,9 +165,7 @@ export default function About() {
 
                   <div className="bg-surface-container-low p-3 rounded-xl flex items-center gap-2.5 hover:bg-surface-container hover:-translate-y-1 hover:shadow-md transition-all duration-300 group/badge relative overflow-hidden">
                     <div className="shine-effect" />
-                    <span className="material-symbols-outlined text-secondary text-2xl group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-transform">
-                      no_crash
-                    </span>
+                    <Icon className="text-secondary text-2xl group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-transform">no_crash</Icon>
                     <div className="flex flex-col">
                       <span className="font-label-sm text-label-sm font-bold text-on-surface">1,800+ Trips</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">Accident-Free Record</span>
@@ -185,9 +176,7 @@ export default function About() {
 
               {/* Founder Personal Quote Box */}
               <div className="bg-primary-container text-on-primary-fixed p-6 sm:p-7 rounded-3xl shadow-xl relative overflow-hidden border border-white/10 group hover:shadow-2xl transition-all duration-500">
-                <span className="material-symbols-outlined text-primary-fixed-dim/20 text-8xl absolute -right-3 -bottom-3 pointer-events-none animate-slow-float">
-                  format_quote
-                </span>
+                <Icon className="text-primary-fixed-dim/20 text-8xl absolute -right-3 -bottom-3 pointer-events-none animate-slow-float">format_quote</Icon>
                 <p className="font-body-md text-body-md text-surface-bright leading-relaxed italic relative z-10">
                   “My grandfather drove visitors through the central tea hills in the 1970s. For me, driving is not just transport—it is about welcoming friends to my homeland, protecting their peace of mind, and ensuring every single mile is safe, relaxed, and genuinely memorable.”
                 </p>
@@ -222,14 +211,12 @@ export default function About() {
               {/* Core 5-Point Guest Charter (Interactive Hover Cards) */}
               <div className="bg-surface-container-lowest p-6 md:p-8 rounded-3xl shadow-sm border border-surface-container hover:shadow-md transition-shadow">
                 <h3 className="font-title-md text-title-md text-primary font-bold mb-5 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-secondary animate-gentle-float">handshake</span>
+                  <Icon className="text-secondary animate-gentle-float">handshake</Icon>
                   {DRIVER_INFO.name}’s 5-Point Guest Charter
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-surface-container-low transition-all duration-300 group/charter">
-                    <span className="material-symbols-outlined text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">
-                      check_circle
-                    </span>
+                    <Icon className="text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">check_circle</Icon>
                     <div>
                       <h4 className="font-label-lg text-label-lg text-primary font-bold group-hover/charter:text-secondary transition-colors">
                         100% Zero-Commission Policy
@@ -241,9 +228,7 @@ export default function About() {
                   </div>
 
                   <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-surface-container-low transition-all duration-300 group/charter">
-                    <span className="material-symbols-outlined text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">
-                      check_circle
-                    </span>
+                    <Icon className="text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">check_circle</Icon>
                     <div>
                       <h4 className="font-label-lg text-label-lg text-primary font-bold group-hover/charter:text-secondary transition-colors">
                         Uncompromising Safety
@@ -255,9 +240,7 @@ export default function About() {
                   </div>
 
                   <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-surface-container-low transition-all duration-300 group/charter">
-                    <span className="material-symbols-outlined text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">
-                      check_circle
-                    </span>
+                    <Icon className="text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">check_circle</Icon>
                     <div>
                       <h4 className="font-label-lg text-label-lg text-primary font-bold group-hover/charter:text-secondary transition-colors">
                         Total Schedule Flexibility
@@ -269,9 +252,7 @@ export default function About() {
                   </div>
 
                   <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-surface-container-low transition-all duration-300 group/charter">
-                    <span className="material-symbols-outlined text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">
-                      check_circle
-                    </span>
+                    <Icon className="text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">check_circle</Icon>
                     <div>
                       <h4 className="font-label-lg text-label-lg text-primary font-bold group-hover/charter:text-secondary transition-colors">
                         Impeccable Punctuality
@@ -283,9 +264,7 @@ export default function About() {
                   </div>
 
                   <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-surface-container-low transition-all duration-300 group/charter sm:col-span-2">
-                    <span className="material-symbols-outlined text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">
-                      check_circle
-                    </span>
+                    <Icon className="text-[#25D366] text-xl shrink-0 mt-0.5 group-hover/charter:scale-125 transition-transform">check_circle</Icon>
                     <div>
                       <h4 className="font-label-lg text-label-lg text-primary font-bold group-hover/charter:text-secondary transition-colors">
                         Transparent Local Insight &amp; Support
@@ -364,7 +343,7 @@ export default function About() {
                     : "text-on-surface-variant hover:text-primary"
                 }`}
               >
-                <span className="material-symbols-outlined text-base">directions_car</span>
+                <Icon className="text-base">directions_car</Icon>
                 <span>Prius Exterior</span>
               </button>
               <button
@@ -376,7 +355,7 @@ export default function About() {
                     : "text-on-surface-variant hover:text-primary"
                 }`}
               >
-                <span className="material-symbols-outlined text-base">airline_seat_recline_normal</span>
+                <Icon className="text-base">airline_seat_recline_normal</Icon>
                 <span>Pristine Cabin</span>
               </button>
             </div>
@@ -406,11 +385,11 @@ export default function About() {
                 {/* Floating Micro Feature Badges on Vehicle */}
                 <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-md">
-                    <span className="material-symbols-outlined text-sm text-[#008A4B]">bolt</span>
+                    <Icon className="text-sm text-[#008A4B]">bolt</Icon>
                     Hybrid Synergy 1.8L
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-md">
-                    <span className="material-symbols-outlined text-sm text-[#0369A1]">ac_unit</span>
+                    <Icon className="text-sm text-[#0369A1]">ac_unit</Icon>
                     Continuous Dual AC
                   </span>
                 </div>
@@ -429,7 +408,7 @@ export default function About() {
                     </h4>
                   </div>
                   <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-lg">
-                    <span className="material-symbols-outlined text-sm">airline_seat_recline_extra</span>
+                    <Icon className="text-sm">airline_seat_recline_extra</Icon>
                     Max 3 Adults
                   </span>
                 </div>
@@ -439,7 +418,7 @@ export default function About() {
               <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F8F0] text-[#008A4B] font-label-sm text-label-sm font-bold mb-3">
-                    <span className="material-symbols-outlined text-sm">eco</span>
+                    <Icon className="text-sm">eco</Icon>
                     Zero Engine Idle Noise in Towns
                   </div>
                   <h3 className="font-headline-md text-headline-md text-primary font-bold">
@@ -453,7 +432,7 @@ export default function About() {
                 {/* Quick Spec Metrics Grid */}
                 <div className="grid grid-cols-2 gap-3 my-6">
                   <div className="p-3 rounded-xl bg-surface-container-low border border-surface-container flex items-center gap-3 hover:bg-surface-container transition-colors">
-                    <span className="material-symbols-outlined text-secondary text-2xl">volume_off</span>
+                    <Icon className="text-secondary text-2xl">volume_off</Icon>
                     <div>
                       <span className="font-label-sm text-label-sm font-bold text-primary block">Whisper Quiet</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">EV Stealth Mode</span>
@@ -461,7 +440,7 @@ export default function About() {
                   </div>
 
                   <div className="p-3 rounded-xl bg-surface-container-low border border-surface-container flex items-center gap-3 hover:bg-surface-container transition-colors">
-                    <span className="material-symbols-outlined text-secondary text-2xl">speed</span>
+                    <Icon className="text-secondary text-2xl">speed</Icon>
                     <div>
                       <span className="font-label-sm text-label-sm font-bold text-primary block">Expressway 100km/h</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">E01 / E02 Approved</span>
@@ -469,7 +448,7 @@ export default function About() {
                   </div>
 
                   <div className="p-3 rounded-xl bg-surface-container-low border border-surface-container flex items-center gap-3 hover:bg-surface-container transition-colors">
-                    <span className="material-symbols-outlined text-secondary text-2xl">wifi</span>
+                    <Icon className="text-secondary text-2xl">wifi</Icon>
                     <div>
                       <span className="font-label-sm text-label-sm font-bold text-primary block">Free 4G Wi-Fi</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">Fast Onboard Hotspot</span>
@@ -477,7 +456,7 @@ export default function About() {
                   </div>
 
                   <div className="p-3 rounded-xl bg-surface-container-low border border-surface-container flex items-center gap-3 hover:bg-surface-container transition-colors">
-                    <span className="material-symbols-outlined text-secondary text-2xl">local_drink</span>
+                    <Icon className="text-secondary text-2xl">local_drink</Icon>
                     <div>
                       <span className="font-label-sm text-label-sm font-bold text-primary block">Chilled Bottles</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">Fresh Spring Water</span>
@@ -488,7 +467,7 @@ export default function About() {
                 {/* Quick Switch Prompt */}
                 <div className="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-4 border-t border-surface-container">
                   <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-base text-[#25D366]">check_circle</span>
+                    <Icon className="text-base text-[#25D366]">check_circle</Icon>
                     Meticulously detailed daily
                   </span>
                   <a
@@ -498,7 +477,7 @@ export default function About() {
                     className="font-bold text-primary hover:text-secondary inline-flex items-center gap-1 transition-colors"
                   >
                     <span>Reserve Prius</span>
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <Icon className="text-sm">arrow_forward</Icon>
                   </a>
                 </div>
               </div>
@@ -515,7 +494,7 @@ export default function About() {
               <div className="shine-effect" />
               <div>
                 <div className="w-13 h-13 rounded-2xl bg-[#E8F8F0] text-[#008A4B] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-2xl">eco</span>
+                  <Icon className="text-2xl">eco</Icon>
                 </div>
                 <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                   Eco-Friendly &amp; Whisper Quiet
@@ -541,7 +520,7 @@ export default function About() {
               <div className="shine-effect" />
               <div>
                 <div className="w-13 h-13 rounded-2xl bg-[#E0F2FE] text-[#0369A1] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-2xl">ac_unit</span>
+                  <Icon className="text-2xl">ac_unit</Icon>
                 </div>
                 <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                   Ice-Cold Dual Climate Control
@@ -567,7 +546,7 @@ export default function About() {
               <div className="shine-effect" />
               <div>
                 <div className="w-13 h-13 rounded-2xl bg-[#FEF3C7] text-[#B45309] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-2xl">airline_seat_recline_extra</span>
+                  <Icon className="text-2xl">airline_seat_recline_extra</Icon>
                 </div>
                 <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                   Plush Seating &amp; Generous Legroom
@@ -593,7 +572,7 @@ export default function About() {
               <div className="shine-effect" />
               <div>
                 <div className="w-13 h-13 rounded-2xl bg-[#F3E8FF] text-[#7E22CE] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-2xl">power</span>
+                  <Icon className="text-2xl">power</Icon>
                 </div>
                 <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                   USB Power &amp; Wi-Fi Onboard
@@ -619,7 +598,7 @@ export default function About() {
               <div className="shine-effect" />
               <div>
                 <div className="w-13 h-13 rounded-2xl bg-[#DCFCE7] text-[#15803D] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-2xl">sanitizer</span>
+                  <Icon className="text-2xl">sanitizer</Icon>
                 </div>
                 <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                   Pristine Hygiene &amp; Amenities
@@ -645,7 +624,7 @@ export default function About() {
               <div className="shine-effect" />
               <div>
                 <div className="w-13 h-13 rounded-2xl bg-[#FEE2E2] text-[#B91C1C] flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-2xl">shield</span>
+                  <Icon className="text-2xl">shield</Icon>
                 </div>
                 <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                   Full Comprehensive Insurance
@@ -672,7 +651,7 @@ export default function About() {
               {/* Left Column: Interactive Luggage Items */}
               <div className="lg:col-span-5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold mb-3">
-                  <span className="material-symbols-outlined text-sm text-secondary">luggage</span>
+                  <Icon className="text-sm text-secondary">luggage</Icon>
                   Smart Cargo Management
                 </span>
                 <h3 className="font-headline-md text-headline-md text-primary font-bold">
@@ -695,7 +674,7 @@ export default function About() {
                         : "bg-surface-container-low border-transparent hover:bg-surface-container hover:border-secondary/20"
                     }`}
                   >
-                    <span className="material-symbols-outlined text-secondary text-2xl">luggage</span>
+                    <Icon className="text-secondary text-2xl">luggage</Icon>
                     <div className="flex-1">
                       <span className="font-label-md text-label-md font-bold text-primary block">
                         2 x Large Suitcases (28” – 30”)
@@ -718,7 +697,7 @@ export default function About() {
                         : "bg-surface-container-low border-transparent hover:bg-surface-container hover:border-secondary/20"
                     }`}
                   >
-                    <span className="material-symbols-outlined text-secondary text-2xl">backpack</span>
+                    <Icon className="text-secondary text-2xl">backpack</Icon>
                     <div className="flex-1">
                       <span className="font-label-md text-label-md font-bold text-primary block">
                         2 x Carry-On Bags (20” – 22”)
@@ -741,7 +720,7 @@ export default function About() {
                         : "bg-surface-container-low border-transparent hover:bg-surface-container hover:border-secondary/20"
                     }`}
                   >
-                    <span className="material-symbols-outlined text-secondary text-2xl">work</span>
+                    <Icon className="text-secondary text-2xl">work</Icon>
                     <div className="flex-1">
                       <span className="font-label-md text-label-md font-bold text-primary block">
                         2-3 x Daypacks / Camera Totes
@@ -760,7 +739,7 @@ export default function About() {
                 <div className="w-full max-w-md bg-surface-container-lowest rounded-2xl p-5 shadow-sm border border-surface-container flex flex-col justify-between relative overflow-hidden">
                   <div className="flex items-center justify-between pb-3 border-b border-surface-container">
                     <span className="font-label-sm text-label-sm font-bold text-on-surface-variant flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-base text-secondary">directions_car</span>
+                      <Icon className="text-base text-secondary">directions_car</Icon>
                       Toyota Prius 3rd Gen Hatch
                     </span>
                     <span className="font-label-sm text-label-sm font-bold bg-[#E8F8F0] text-[#008A4B] px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
@@ -779,7 +758,7 @@ export default function About() {
                           : "bg-surface-container border-dashed border-outline-variant hover:border-secondary"
                       }`}
                     >
-                      <span className="material-symbols-outlined text-3xl text-secondary mb-1">luggage</span>
+                      <Icon className="text-3xl text-secondary mb-1">luggage</Icon>
                       <span className="font-label-sm text-label-sm font-bold text-primary">Checked Luggage 1</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">Up to 28” Heavy</span>
                     </div>
@@ -792,7 +771,7 @@ export default function About() {
                           : "bg-surface-container border-dashed border-outline-variant hover:border-secondary"
                       }`}
                     >
-                      <span className="material-symbols-outlined text-3xl text-secondary mb-1">luggage</span>
+                      <Icon className="text-3xl text-secondary mb-1">luggage</Icon>
                       <span className="font-label-sm text-label-sm font-bold text-primary">Checked Luggage 2</span>
                       <span className="font-body-sm text-body-sm text-on-surface-variant">Up to 28” Heavy</span>
                     </div>
@@ -808,17 +787,17 @@ export default function About() {
                       }`}
                     >
                       <div className="flex items-center gap-1.5">
-                        <span className="material-symbols-outlined text-secondary text-lg">backpack</span>
+                        <Icon className="text-secondary text-lg">backpack</Icon>
                         <span className="font-label-sm text-label-sm font-semibold">Carry-on 1</span>
                       </div>
                       <span className="text-on-surface-variant text-xs">+</span>
                       <div className="flex items-center gap-1.5">
-                        <span className="material-symbols-outlined text-secondary text-lg">backpack</span>
+                        <Icon className="text-secondary text-lg">backpack</Icon>
                         <span className="font-label-sm text-label-sm font-semibold">Carry-on 2</span>
                       </div>
                       <span className="text-on-surface-variant text-xs">+</span>
                       <div className="flex items-center gap-1.5">
-                        <span className="material-symbols-outlined text-secondary text-lg">photo_camera</span>
+                        <Icon className="text-secondary text-lg">photo_camera</Icon>
                         <span className="font-label-sm text-label-sm font-semibold">Daypack</span>
                       </div>
                     </div>
@@ -847,7 +826,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 reveal-on-scroll">
             <span className="font-label-lg text-label-lg text-secondary font-bold tracking-wider uppercase inline-flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-sm">balance</span>
+              <Icon className="text-sm">balance</Icon>
               Transparent Standards
             </span>
             <h2 className="font-headline-lg text-headline-lg text-primary tracking-tight mt-1.5">
@@ -870,7 +849,7 @@ export default function About() {
                     <th className="p-4 sm:p-6 font-title-md text-title-md font-bold bg-primary-container text-on-primary w-1/3 relative shadow-inner">
                       <div className="flex items-center justify-between">
                         <span className="flex items-center gap-2">
-                          <span className="material-symbols-outlined text-[#25D366]">star</span>
+                          <Icon className="text-[#25D366]">star</Icon>
                           CeylonDrive (Toyota Prius)
                         </span>
                         <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[11px] font-bold">
@@ -896,7 +875,7 @@ export default function About() {
                     </td>
                     <td className="p-4 sm:p-5 bg-primary-container/5 font-semibold text-primary border-x border-primary-container/10">
                       <div className="flex items-center gap-2.5">
-                        <span className="material-symbols-outlined text-[#25D366] text-xl">check_circle</span>
+                        <Icon className="text-[#25D366] text-xl">check_circle</Icon>
                         <span>2 Large Suitcases + 2 Carry-ons</span>
                       </div>
                     </td>
@@ -917,7 +896,7 @@ export default function About() {
                     </td>
                     <td className="p-4 sm:p-5 bg-primary-container/5 font-semibold text-primary border-x border-primary-container/10">
                       <div className="flex items-center gap-2.5">
-                        <span className="material-symbols-outlined text-[#25D366] text-xl">check_circle</span>
+                        <Icon className="text-[#25D366] text-xl">check_circle</Icon>
                         <span>Continuous Dual Digital AC Guaranteed</span>
                       </div>
                     </td>
@@ -938,7 +917,7 @@ export default function About() {
                     </td>
                     <td className="p-4 sm:p-5 bg-primary-container/5 font-semibold text-primary border-x border-primary-container/10">
                       <div className="flex items-center gap-2.5">
-                        <span className="material-symbols-outlined text-[#25D366] text-xl">check_circle</span>
+                        <Icon className="text-[#25D366] text-xl">check_circle</Icon>
                         <span>100 km/h Smooth Expressway Tolls Included</span>
                       </div>
                     </td>
@@ -947,7 +926,7 @@ export default function About() {
                     </td>
                     <td className="p-4 sm:p-5 text-on-surface-variant font-body-md">
                       <span className="text-error font-semibold flex items-center gap-1">
-                        <span className="material-symbols-outlined text-base">cancel</span> Strictly Forbidden on Expressways
+                        <Icon className="text-base">cancel</Icon> Strictly Forbidden on Expressways
                       </span>
                     </td>
                   </tr>
@@ -961,7 +940,7 @@ export default function About() {
                     </td>
                     <td className="p-4 sm:p-5 bg-primary-container/5 font-semibold text-primary border-x border-primary-container/10">
                       <div className="flex items-center gap-2.5">
-                        <span className="material-symbols-outlined text-[#25D366] text-xl">check_circle</span>
+                        <Icon className="text-[#25D366] text-xl">check_circle</Icon>
                         <span>8 Airbags + ABS + VSC Stability</span>
                       </div>
                     </td>
@@ -982,7 +961,7 @@ export default function About() {
                     </td>
                     <td className="p-4 sm:p-5 bg-primary-container/5 font-semibold text-primary border-x border-primary-container/10">
                       <div className="flex items-center gap-2.5">
-                        <span className="material-symbols-outlined text-[#25D366] text-xl">check_circle</span>
+                        <Icon className="text-[#25D366] text-xl">check_circle</Icon>
                         <span>Fluent English + SLTDA Chauffeur Guide</span>
                       </div>
                     </td>
@@ -1003,7 +982,7 @@ export default function About() {
                     </td>
                     <td className="p-4 sm:p-5 bg-primary-container/5 font-semibold text-primary border-x border-primary-container/10">
                       <div className="flex items-center gap-2.5">
-                        <span className="material-symbols-outlined text-[#25D366] text-xl">check_circle</span>
+                        <Icon className="text-[#25D366] text-xl">check_circle</Icon>
                         <span>100% Fixed (All Tolls, Parking &amp; Fuel Included)</span>
                       </div>
                     </td>
@@ -1028,7 +1007,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 reveal-on-scroll">
             <span className="font-label-lg text-label-lg text-secondary font-bold tracking-wider uppercase inline-flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-sm">verified</span>
+              <Icon className="text-sm">verified</Icon>
               Our Unwavering Standards
             </span>
             <h2 className="font-headline-lg text-headline-lg text-primary tracking-tight mt-1.5">
@@ -1044,7 +1023,7 @@ export default function About() {
             >
               <div className="shine-effect" />
               <div className="w-13 h-13 rounded-2xl bg-primary-container text-on-primary flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-md">
-                <span className="material-symbols-outlined text-2xl">health_and_safety</span>
+                <Icon className="text-2xl">health_and_safety</Icon>
               </div>
               <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                 1. Safety First
@@ -1061,7 +1040,7 @@ export default function About() {
             >
               <div className="shine-effect" />
               <div className="w-13 h-13 rounded-2xl bg-secondary-container text-on-secondary-container flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-md">
-                <span className="material-symbols-outlined text-2xl">receipt_long</span>
+                <Icon className="text-2xl">receipt_long</Icon>
               </div>
               <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                 2. Zero Hidden Fees
@@ -1078,7 +1057,7 @@ export default function About() {
             >
               <div className="shine-effect" />
               <div className="w-13 h-13 rounded-2xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-md">
-                <span className="material-symbols-outlined text-2xl">alt_route</span>
+                <Icon className="text-2xl">alt_route</Icon>
               </div>
               <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                 3. Fluid Itineraries
@@ -1095,7 +1074,7 @@ export default function About() {
             >
               <div className="shine-effect" />
               <div className="w-13 h-13 rounded-2xl bg-surface-container-high text-on-surface flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-md">
-                <span className="material-symbols-outlined text-2xl">support_agent</span>
+                <Icon className="text-2xl">support_agent</Icon>
               </div>
               <h3 className="font-title-md text-title-md text-primary font-bold mb-2 group-hover:text-secondary transition-colors">
                 4. 24/7 Availability
@@ -1139,10 +1118,10 @@ export default function About() {
               </p>
               <div className="flex flex-wrap items-center gap-4 text-surface-bright font-label-sm text-label-sm pt-2">
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#25D366] text-base">timer</span> Reply within 10 minutes
+                  <Icon className="text-[#25D366] text-base">timer</Icon> Reply within 10 minutes
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#25D366] text-base">lock_open</span> No credit card pre-payment needed
+                  <Icon className="text-[#25D366] text-base">lock_open</Icon> No credit card pre-payment needed
                 </span>
               </div>
             </div>
@@ -1154,18 +1133,16 @@ export default function About() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="material-symbols-outlined text-2xl">chat</span>
+                <Icon className="text-2xl">chat</Icon>
                 <span>Text {DRIVER_INFO.name.split(" ")[0]} on WhatsApp</span>
               </a>
               <Link
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-high/20 hover:bg-surface-container-high/30 text-surface-bright font-label-md text-label-md font-semibold transition-all text-center group hover:scale-105 active:scale-95 duration-200 border border-white/10"
                 to="/contact-booking"
               >
-                <span className="material-symbols-outlined text-lg">calculate</span>
+                <Icon className="text-lg">calculate</Icon>
                 <span>Calculate Route Fare First</span>
-                <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
+                <Icon className="text-base group-hover:translate-x-1 transition-transform">arrow_forward</Icon>
               </Link>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
+import Icon from "../components/Icon";
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState("tours");
@@ -179,36 +180,21 @@ export default function Services() {
               {/* Feature Badges with Hover Micro-Interactions */}
               <div className="flex flex-wrap items-center gap-3 pt-2 animate-fade-in-up animation-delay-200">
                 <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-secondary/30 border border-surface-container transition-all duration-300 group cursor-default">
-                  <span
-                    className="material-symbols-outlined text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    eco
-                  </span>
+                  <Icon className="text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>eco</Icon>
                   <span className="font-label-md text-label-md text-on-surface font-medium">
                     Toyota Hybrid Fleet
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-secondary/30 border border-surface-container transition-all duration-300 group cursor-default">
-                  <span
-                    className="material-symbols-outlined text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    format_image_left
-                  </span>
+                  <Icon className="text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>format_image_left</Icon>
                   <span className="font-label-md text-label-md text-on-surface font-medium">
                     100% Fixed Rates
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-secondary/30 border border-surface-container transition-all duration-300 group cursor-default">
-                  <span
-                    className="material-symbols-outlined text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    support_agent
-                  </span>
+                  <Icon className="text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>support_agent</Icon>
                   <span className="font-label-md text-label-md text-on-surface font-medium">
                     Chauffeur Harindu On-Call
                   </span>
@@ -222,7 +208,7 @@ export default function Services() {
                 <div className="shine-effect" />
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary">
-                    <span className="material-symbols-outlined text-2xl">verified_user</span>
+                    <Icon className="text-2xl">verified_user</Icon>
                   </div>
                   <div>
                     <span className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">
@@ -236,21 +222,21 @@ export default function Services() {
                 <div className="space-y-2.5 text-body-sm font-body-sm text-on-surface-variant pt-2 border-t border-surface-container">
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-sm text-secondary">star</span>
+                      <Icon className="text-sm text-secondary">star</Icon>
                       Guest Rating
                     </span>
                     <span className="font-bold text-on-surface">5.0 / 5.0 (TripAdvisor)</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-sm text-secondary">timer</span>
+                      <Icon className="text-sm text-secondary">timer</Icon>
                       Punctuality
                     </span>
                     <span className="font-bold text-on-surface">100% On-Time Guarantee</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-sm text-secondary">luggage</span>
+                      <Icon className="text-sm text-secondary">luggage</Icon>
                       Vehicle Class
                     </span>
                     <span className="font-bold text-on-surface">Spacious Toyota Prius</span>
@@ -284,15 +270,15 @@ export default function Services() {
                     : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 active:scale-95"
                 }`}
               >
-                <span
-                  className={`material-symbols-outlined text-base transition-transform duration-300 ${
+                <Icon
+                  className={`text-base transition-transform duration-300 ${
                     activeTab === "airport"
                       ? "text-secondary scale-110"
                       : "group-hover:scale-110 group-hover:-translate-y-0.5"
                   }`}
                 >
                   flight_land
-                </span>
+                </Icon>
                 <span>BIA Transfers</span>
               </button>
 
@@ -307,15 +293,15 @@ export default function Services() {
                     : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 active:scale-95"
                 }`}
               >
-                <span
-                  className={`material-symbols-outlined text-base transition-transform duration-300 ${
+                <Icon
+                  className={`text-base transition-transform duration-300 ${
                     activeTab === "tours"
                       ? "text-secondary scale-110"
                       : "group-hover:scale-110 group-hover:-translate-y-0.5"
                   }`}
                 >
                   explore
-                </span>
+                </Icon>
                 <span>Multi-Day Tours</span>
               </button>
 
@@ -330,15 +316,15 @@ export default function Services() {
                     : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 active:scale-95"
                 }`}
               >
-                <span
-                  className={`material-symbols-outlined text-base transition-transform duration-300 ${
+                <Icon
+                  className={`text-base transition-transform duration-300 ${
                     activeTab === "daytrips"
                       ? "text-secondary scale-110"
                       : "group-hover:scale-110 group-hover:-translate-y-0.5"
                   }`}
                 >
                   qr_code_2
-                </span>
+                </Icon>
                 <span>Day Excursions</span>
               </button>
             </div>
@@ -365,15 +351,15 @@ export default function Services() {
                   </p>
                   <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-2 text-on-surface">
                     <span className="inline-flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                      <span className="material-symbols-outlined text-base text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                      <Icon className="text-base text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</Icon>
                       Free flight delay waiting
                     </span>
                     <span className="inline-flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                      <span className="material-symbols-outlined text-base text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                      <Icon className="text-base text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</Icon>
                       All highway expressway tolls included
                     </span>
                     <span className="inline-flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                      <span className="material-symbols-outlined text-base text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                      <Icon className="text-base text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</Icon>
                       Complimentary chilled Ceylon water
                     </span>
                   </div>
@@ -384,9 +370,7 @@ export default function Services() {
                   href="#booking-engine"
                 >
                   <span>Calculate Transfer Fare</span>
-                  <span className="material-symbols-outlined text-lg group-hover/btn:translate-y-1 transition-transform">
-                    arrow_downward
-                  </span>
+                  <Icon className="text-lg group-hover/btn:translate-y-1 transition-transform">arrow_downward</Icon>
                 </a>
               </div>
 
@@ -429,7 +413,7 @@ export default function Services() {
                     <div className="flex flex-col gap-2 relative z-10">
                       <div className="flex items-center justify-between">
                         <span className="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
-                          <span className="material-symbols-outlined text-sm">schedule</span>
+                          <Icon className="text-sm">schedule</Icon>
                           {item.time}
                         </span>
                         <span className="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant group-hover:bg-secondary/10 group-hover:text-secondary transition-colors">
@@ -455,9 +439,7 @@ export default function Services() {
                         <span className="font-label-sm text-label-sm text-on-surface-variant">
                           {item.lkr}
                         </span>
-                        <span className="material-symbols-outlined text-sm text-secondary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">
-                          arrow_forward
-                        </span>
+                        <Icon className="text-sm text-secondary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">arrow_forward</Icon>
                       </div>
                     </div>
                   </div>
@@ -514,9 +496,7 @@ export default function Services() {
                 >
                   <div className="shine-effect" />
                   <span>Book Tour Chauffeur</span>
-                  <span className="material-symbols-outlined text-lg group-hover/cta:translate-x-1.5 transition-transform">
-                    arrow_forward
-                  </span>
+                  <Icon className="text-lg group-hover/cta:translate-x-1.5 transition-transform">arrow_forward</Icon>
                 </button>
               </div>
 
@@ -589,9 +569,7 @@ export default function Services() {
                       onClick={() => handlePrefillTour("5-Day Highlights of Sri Lanka")}
                     >
                       <span>Select 5-Day Plan</span>
-                      <span className="material-symbols-outlined text-base group-hover/btn:translate-x-1.5 transition-transform">
-                        arrow_forward
-                      </span>
+                      <Icon className="text-base group-hover/btn:translate-x-1.5 transition-transform">arrow_forward</Icon>
                     </button>
                   </div>
                 </div>
@@ -603,7 +581,7 @@ export default function Services() {
                 >
                   <div className="shine-effect" />
                   <div className="absolute top-4 right-4 z-20 px-3.5 py-1.5 rounded-full bg-secondary text-white font-label-sm text-label-sm font-bold shadow-md flex items-center gap-1.5 animate-pulse-subtle">
-                    <span className="material-symbols-outlined text-xs">star</span>
+                    <Icon className="text-xs">star</Icon>
                     Recommended
                   </div>
                   <div className="w-full h-56 relative overflow-hidden">
@@ -675,9 +653,7 @@ export default function Services() {
                       onClick={() => handlePrefillTour("8-Day Classic Ceylon Circuit")}
                     >
                       <span>Select 8-Day Classic</span>
-                      <span className="material-symbols-outlined text-base group-hover/btn:translate-x-1.5 transition-transform">
-                        arrow_forward
-                      </span>
+                      <Icon className="text-base group-hover/btn:translate-x-1.5 transition-transform">arrow_forward</Icon>
                     </button>
                   </div>
                 </div>
@@ -757,9 +733,7 @@ export default function Services() {
                       onClick={() => handlePrefillTour("12-Day Grand Island Expedition")}
                     >
                       <span>Select 12-Day Grand</span>
-                      <span className="material-symbols-outlined text-base group-hover/btn:translate-x-1.5 transition-transform">
-                        arrow_forward
-                      </span>
+                      <Icon className="text-base group-hover/btn:translate-x-1.5 transition-transform">arrow_forward</Icon>
                     </button>
                   </div>
                 </div>
@@ -804,7 +778,7 @@ export default function Services() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70" />
                     <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-bold text-secondary shadow-sm flex items-center gap-1">
-                      <span className="material-symbols-outlined text-xs">schedule</span>
+                      <Icon className="text-xs">schedule</Icon>
                       10-12 Hours
                     </span>
                   </div>
@@ -823,9 +797,7 @@ export default function Services() {
                       onClick={() => handlePrefillDayTrip("Galle Fort & Southern Coast Day Trip")}
                     >
                       <span>Book This Excursion</span>
-                      <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
-                        arrow_forward
-                      </span>
+                      <Icon className="text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</Icon>
                     </button>
                   </div>
                 </div>
@@ -845,7 +817,7 @@ export default function Services() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70" />
                     <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-bold text-secondary shadow-sm flex items-center gap-1">
-                      <span className="material-symbols-outlined text-xs">schedule</span>
+                      <Icon className="text-xs">schedule</Icon>
                       12-14 Hours
                     </span>
                   </div>
@@ -864,9 +836,7 @@ export default function Services() {
                       onClick={() => handlePrefillDayTrip("Sigiriya & Minneriya Day Excursion")}
                     >
                       <span>Book This Excursion</span>
-                      <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
-                        arrow_forward
-                      </span>
+                      <Icon className="text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</Icon>
                     </button>
                   </div>
                 </div>
@@ -886,7 +856,7 @@ export default function Services() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70" />
                     <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm font-label-sm text-label-sm font-bold text-secondary shadow-sm flex items-center gap-1">
-                      <span className="material-symbols-outlined text-xs">schedule</span>
+                      <Icon className="text-xs">schedule</Icon>
                       10-11 Hours
                     </span>
                   </div>
@@ -905,9 +875,7 @@ export default function Services() {
                       onClick={() => handlePrefillDayTrip("Kandy Cultural Heritage Tour")}
                     >
                       <span>Book This Excursion</span>
-                      <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">
-                        arrow_forward
-                      </span>
+                      <Icon className="text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</Icon>
                     </button>
                   </div>
                 </div>
@@ -924,7 +892,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-14 reveal-on-scroll">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold uppercase tracking-wider mb-2">
-              <span className="material-symbols-outlined text-sm">verified</span>
+              <Icon className="text-sm">verified</Icon>
               Standard on Every Journey
             </div>
             <h2 className="font-headline-lg text-headline-lg text-on-surface mt-1">
@@ -975,7 +943,7 @@ export default function Services() {
               >
                 <div className="shine-effect" />
                 <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center shrink-0 text-secondary group-hover:bg-secondary group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-sm">
-                  <span className="material-symbols-outlined text-2xl">{feature.icon}</span>
+                  <Icon className="text-2xl">{feature.icon}</Icon>
                 </div>
                 <div className="flex flex-col gap-1.5 relative z-10">
                   <h3 className="font-title-md text-title-md text-on-surface font-semibold group-hover:text-secondary transition-colors duration-200">
@@ -1007,7 +975,7 @@ export default function Services() {
             {/* Left description */}
             <div className="lg:col-span-5 flex flex-col gap-6 reveal-from-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface self-start font-label-sm text-label-sm font-semibold border border-surface-container">
-                <span className="material-symbols-outlined text-sm text-secondary animate-pulse-subtle">calculate</span>
+                <Icon className="text-sm text-secondary animate-pulse-subtle">calculate</Icon>
                 <span>Real-Time Estimation</span>
               </div>
               <h2 className="font-display-lg text-display-lg text-on-surface tracking-tight">
@@ -1022,7 +990,7 @@ export default function Services() {
                 <div className="shine-effect" />
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center text-secondary shrink-0 group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">verified</span>
+                    <Icon className="text-2xl">verified</Icon>
                   </div>
                   <div>
                     <h3 className="font-title-md text-title-md text-on-surface font-bold">100% Transparent Pricing</h3>
@@ -1033,21 +1001,21 @@ export default function Services() {
                 <div className="p-4 rounded-2xl bg-surface-container-low flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant">
                   <div className="flex justify-between items-center py-1 border-b border-surface-container/60">
                     <span className="flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-xs text-secondary">check</span>
+                      <Icon className="text-xs text-secondary">check</Icon>
                       Expressway Tolls:
                     </span>
                     <span className="font-semibold text-on-surface">100% Included</span>
                   </div>
                   <div className="flex justify-between items-center py-1 border-b border-surface-container/60">
                     <span className="flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-xs text-secondary">check</span>
+                      <Icon className="text-xs text-secondary">check</Icon>
                       Driver Accommodation:
                     </span>
                     <span className="font-semibold text-on-surface">Included on Tours</span>
                   </div>
                   <div className="flex justify-between items-center py-1">
                     <span className="flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-xs text-secondary">payments</span>
+                      <Icon className="text-xs text-secondary">payments</Icon>
                       Currencies Accepted:
                     </span>
                     <span className="font-semibold text-on-surface">USD, EUR, GBP, LKR</span>
@@ -1061,7 +1029,7 @@ export default function Services() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant flex items-center gap-1" htmlFor="calc-service">
-                    <span className="material-symbols-outlined text-sm text-secondary">commute</span>
+                    <Icon className="text-sm text-secondary">commute</Icon>
                     Service Type
                   </label>
                   <select
@@ -1078,7 +1046,7 @@ export default function Services() {
 
                 <div className="flex flex-col gap-1.5">
                   <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant flex items-center gap-1" htmlFor="calc-pickup">
-                    <span className="material-symbols-outlined text-sm text-secondary">pin_drop</span>
+                    <Icon className="text-sm text-secondary">pin_drop</Icon>
                     Pickup Location
                   </label>
                   <select
@@ -1102,7 +1070,7 @@ export default function Services() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant flex items-center gap-1" htmlFor="calc-destination">
-                    <span className="material-symbols-outlined text-sm text-secondary">location_on</span>
+                    <Icon className="text-sm text-secondary">location_on</Icon>
                     Drop-off / Main Destination
                   </label>
                   <select
@@ -1126,7 +1094,7 @@ export default function Services() {
                 {calcService === "tour" ? (
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant flex items-center gap-1" htmlFor="calc-days">
-                      <span className="material-symbols-outlined text-sm text-secondary">calendar_today</span>
+                      <Icon className="text-sm text-secondary">calendar_today</Icon>
                       Number of Tour Days
                     </label>
                     <select
@@ -1147,7 +1115,7 @@ export default function Services() {
                 ) : (
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant flex items-center gap-1" htmlFor="calc-date">
-                      <span className="material-symbols-outlined text-sm text-secondary">event</span>
+                      <Icon className="text-sm text-secondary">event</Icon>
                       Travel Date
                     </label>
                     <input
@@ -1164,7 +1132,7 @@ export default function Services() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant flex items-center gap-1" htmlFor="calc-passengers">
-                    <span className="material-symbols-outlined text-sm text-secondary">group</span>
+                    <Icon className="text-sm text-secondary">group</Icon>
                     Passengers
                   </label>
                   <select
@@ -1181,7 +1149,7 @@ export default function Services() {
 
                 <div className="flex flex-col gap-1.5">
                   <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant flex items-center gap-1" htmlFor="calc-luggage">
-                    <span className="material-symbols-outlined text-sm text-secondary">luggage</span>
+                    <Icon className="text-sm text-secondary">luggage</Icon>
                     Luggage Pieces
                   </label>
                   <select
@@ -1198,7 +1166,7 @@ export default function Services() {
 
                 <div className="flex flex-col gap-1.5">
                   <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant flex items-center gap-1" htmlFor="calc-flight">
-                    <span className="material-symbols-outlined text-sm text-secondary">flight</span>
+                    <Icon className="text-sm text-secondary">flight</Icon>
                     Flight Number
                   </label>
                   <input
@@ -1230,7 +1198,7 @@ export default function Services() {
                     </span>
                   </div>
                   <span className="font-body-sm text-body-sm text-secondary font-medium flex items-center gap-1">
-                    <span className="material-symbols-outlined text-sm">info</span>
+                    <Icon className="text-sm">info</Icon>
                     {priceCalculation.note}
                   </span>
                 </div>
@@ -1241,9 +1209,7 @@ export default function Services() {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#25D366] text-white font-label-lg text-label-lg font-bold shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:brightness-110 active:scale-95 transition-all duration-300 whatsapp-pulse group/btn relative overflow-hidden shrink-0"
                 >
                   <div className="shine-effect" />
-                  <span className="material-symbols-outlined text-2xl group-hover/btn:rotate-12 transition-transform duration-300">
-                    chat
-                  </span>
+                  <Icon className="text-2xl group-hover/btn:rotate-12 transition-transform duration-300">chat</Icon>
                   <span>Inquire on WhatsApp</span>
                 </button>
               </div>
@@ -1292,9 +1258,7 @@ export default function Services() {
               >
                 <summary className="flex items-center justify-between font-title-md text-title-md text-on-surface font-semibold group-open:text-secondary group-hover:text-secondary transition-colors duration-200">
                   <span>{faq.q}</span>
-                  <span className="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-secondary shrink-0 ml-4">
-                    expand_more
-                  </span>
+                  <Icon className="transition-transform duration-300 group-open:rotate-180 text-secondary shrink-0 ml-4">expand_more</Icon>
                 </summary>
                 <p className="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed border-t border-surface-container/60 pt-4">
                   {faq.a}
@@ -1336,11 +1300,11 @@ export default function Services() {
               </p>
               <div className="flex flex-wrap items-center gap-4 text-white font-label-sm text-label-sm pt-2">
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#25D366] text-base">timer</span>
+                  <Icon className="text-[#25D366] text-base">timer</Icon>
                   Replies within 10 minutes
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#25D366] text-base">lock_open</span>
+                  <Icon className="text-[#25D366] text-base">lock_open</Icon>
                   No credit card pre-payment needed
                 </span>
               </div>
@@ -1353,18 +1317,16 @@ export default function Services() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="material-symbols-outlined text-2xl">chat</span>
+                <Icon className="text-2xl">chat</Icon>
                 <span>Chat with Harindu</span>
               </a>
               <Link
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-high/20 hover:bg-surface-container-high/30 text-white font-label-md text-label-md font-semibold transition-all text-center group hover:scale-105 active:scale-95 duration-200 border border-white/10"
                 to="/contact-booking"
               >
-                <span className="material-symbols-outlined text-lg">calendar_month</span>
+                <Icon className="text-lg">calendar_month</Icon>
                 <span>Go to Booking &amp; Contact</span>
-                <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
+                <Icon className="text-base group-hover:translate-x-1 transition-transform">arrow_forward</Icon>
               </Link>
             </div>
           </div>

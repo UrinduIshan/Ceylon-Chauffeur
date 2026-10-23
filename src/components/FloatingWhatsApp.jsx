@@ -1,5 +1,6 @@
 import React from "react";
 import { DRIVER_INFO } from "../data/constants";
+import Icon from "./Icon";
 
 export default function FloatingWhatsApp() {
   return (
@@ -14,10 +15,9 @@ export default function FloatingWhatsApp() {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span className="material-symbols-outlined text-3xl leading-none">
-          forum
-        </span>
+        <Icon name="whatsapp" className="text-3xl leading-none" />
       </a>
     </aside>
   );
 }
+

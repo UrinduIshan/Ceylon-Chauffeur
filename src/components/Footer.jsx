@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
+import Icon from "./Icon";
 
 export default function Footer() {
   return (
@@ -24,11 +25,11 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-2">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] font-label-sm text-label-sm font-semibold">
-                <span className="material-symbols-outlined text-sm">shield_person</span>
+                <Icon name="shield_person" className="text-sm" />
                 SLTDA Tourist Safety Certified
               </span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
-                <span className="material-symbols-outlined text-sm">eco</span>
+                <Icon name="eco" className="text-sm" />
                 Toyota Prius Hybrid Eco Fleet
               </span>
             </div>

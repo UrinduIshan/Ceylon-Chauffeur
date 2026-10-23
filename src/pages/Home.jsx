@@ -48,6 +48,159 @@ const TESTIMONIALS = [
   },
 ];
 
+function ChauffeurStats() {
+  const containerRef = useRef(null);
+  const [counts, setCounts] = useState({ years: 0, trips: 0, punctuality: 0 });
+  const [hasStarted, setHasStarted] = useState(false);
+  const [activeStat, setActiveStat] = useState(null);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      setHasStarted(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setHasStarted(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setCounts({ years: 12, trips: 1800, punctuality: 100 });
+      setActiveStat("completed");
+      return;
+    }
+
+    let animId;
+    const startTime = performance.now();
+
+    // Staggered sequential timing:
+    // 1. 12+ years transforms from 0 (0 to 700ms)
+    // 2. Then, 1,800+ safe trips transforms from 0 (starts at 750ms, ends at 1700ms)
+    // 3. Then, 100% punctuality transforms from 0 (starts at 1750ms, ends at 2500ms)
+    const DURATION_1 = 700;
+    const DELAY_2 = 750;
+    const DURATION_2 = 950;
+    const DELAY_3 = 1750;
+    const DURATION_3 = 750;
+    const TOTAL_DURATION = DELAY_3 + DURATION_3;
+
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const step = (now) => {
+      const elapsed = now - startTime;
+
+      let years = 0;
+      if (elapsed > 0) {
+        const p1 = Math.min(elapsed / DURATION_1, 1);
+        years = Math.round(easeOutCubic(p1) * 12);
+      }
+
+      let trips = 0;
+      if (elapsed >= DELAY_2) {
+        const p2 = Math.min((elapsed - DELAY_2) / DURATION_2, 1);
+        trips = Math.round(easeOutCubic(p2) * 1800);
+      }
+
+      let punctuality = 0;
+      if (elapsed >= DELAY_3) {
+        const p3 = Math.min((elapsed - DELAY_3) / DURATION_3, 1);
+        punctuality = Math.round(easeOutCubic(p3) * 100);
+      }
+
+      if (elapsed < DELAY_2) {
+        setActiveStat("years");
+      } else if (elapsed < DELAY_3) {
+        setActiveStat("trips");
+      } else if (elapsed < TOTAL_DURATION) {
+        setActiveStat("punctuality");
+      } else {
+        setActiveStat("completed");
+      }
+
+      setCounts({ years, trips, punctuality });
+
+      if (elapsed < TOTAL_DURATION) {
+        animId = requestAnimationFrame(step);
+      } else {
+        setCounts({ years: 12, trips: 1800, punctuality: 100 });
+        setActiveStat("completed");
+      }
+    };
+
+    animId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animId);
+  }, [hasStarted]);
+
+  return (
+    <div ref={containerRef} className="grid grid-cols-2 sm:grid-cols-3 gap-4 my-6 w-full">
+      {/* 12+ Years */}
+      <div
+        className={`p-3.5 rounded-xl transition-all duration-300 cursor-default border ${
+          activeStat === "years"
+            ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
+            : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
+        }`}
+      >
+        <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
+          {counts.years}+
+        </span>
+        <span className="font-body-sm text-body-sm text-on-surface-variant">Years Island Experience</span>
+      </div>
+
+      {/* 1,800+ Trips */}
+      <div
+        className={`p-3.5 rounded-xl transition-all duration-300 cursor-default border ${
+          activeStat === "trips"
+            ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
+            : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
+        }`}
+      >
+        <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
+          {counts.trips.toLocaleString("en-US")}+
+        </span>
+        <span className="font-body-sm text-body-sm text-on-surface-variant">Safe Trips Handled</span>
+      </div>
+
+      {/* 100% Punctuality */}
+      <div
+        className={`p-3.5 rounded-xl col-span-2 sm:col-span-1 transition-all duration-300 cursor-default border ${
+          activeStat === "punctuality"
+            ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
+            : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
+        }`}
+      >
+        <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
+          {counts.punctuality}%
+        </span>
+        <span className="font-body-sm text-body-sm text-on-surface-variant">Punctuality Score</span>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [pickup, setPickup] = useState("BIA Airport (Katunayake)");
   const [dropoff, setDropoff] = useState("Colombo / Negombo");
@@ -830,20 +983,7 @@ export default function Home() {
               <p className="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
                 With over 12 years of driving across every nook and corner of Sri Lanka, I welcome you not just as a chauffeur, but as your local guardian, itinerary advisor, and island storyteller.
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 my-6 w-full">
-                <div className="bg-surface-container-low hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm p-3.5 rounded-xl transition-all duration-200 cursor-default">
-                  <span className="block font-headline-sm text-headline-sm text-on-surface font-bold">12+</span>
-                  <span className="font-body-sm text-body-sm text-on-surface-variant">Years Island Experience</span>
-                </div>
-                <div className="bg-surface-container-low hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm p-3.5 rounded-xl transition-all duration-200 cursor-default">
-                  <span className="block font-headline-sm text-headline-sm text-on-surface font-bold">1,800+</span>
-                  <span className="font-body-sm text-body-sm text-on-surface-variant">Safe Trips Handled</span>
-                </div>
-                <div className="bg-surface-container-low hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm p-3.5 rounded-xl col-span-2 sm:col-span-1 transition-all duration-200 cursor-default">
-                  <span className="block font-headline-sm text-headline-sm text-on-surface font-bold">100%</span>
-                  <span className="font-body-sm text-body-sm text-on-surface-variant">Punctuality Score</span>
-                </div>
-              </div>
+              <ChauffeurStats />
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-bold transition-all shadow-md hover:scale-105 active:scale-95 duration-200"

@@ -1,7 +1,126 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
 import Icon from "../components/Icon";
+
+function AboutTrustStats() {
+  const containerRef = useRef(null);
+  const [counts, setCounts] = useState({ friendly: 0, nationalities: 0 });
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      setHasStarted(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setHasStarted(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setCounts({ friendly: 100, nationalities: 45 });
+      return;
+    }
+
+    let animId;
+    const startTime = performance.now();
+
+    // Sequence timings (ms):
+    // 1. 100% Solo & Family Friendly: 0 -> 100% (Duration: 800ms)
+    // 2. 45+ Nationalities Hosted: 0 -> 45+ (Delay: 600ms, Duration: 800ms)
+    const DURATION_1 = 800;
+    const DELAY_2 = 600;
+    const DURATION_2 = 800;
+    const TOTAL_DURATION = DELAY_2 + DURATION_2;
+
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const step = (now) => {
+      const elapsed = now - startTime;
+
+      let friendly = 0;
+      if (elapsed > 0) {
+        const p1 = Math.min(elapsed / DURATION_1, 1);
+        friendly = Math.round(easeOutCubic(p1) * 100);
+      }
+
+      let nationalities = 0;
+      if (elapsed >= DELAY_2) {
+        const p2 = Math.min((elapsed - DELAY_2) / DURATION_2, 1);
+        nationalities = Math.round(easeOutCubic(p2) * 45);
+      }
+
+      setCounts({ friendly, nationalities });
+
+      if (elapsed < TOTAL_DURATION) {
+        animId = requestAnimationFrame(step);
+      } else {
+        setCounts({ friendly: 100, nationalities: 45 });
+      }
+    };
+
+    animId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animId);
+  }, [hasStarted]);
+
+  return (
+    <div ref={containerRef} className="grid grid-cols-3 gap-4 text-center">
+      {/* 100% Verified Solo & Family Friendly */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-surface-container hover:bg-surface-container-lowest hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 group">
+        <span className="font-display-lg text-headline-lg text-primary font-bold block group-hover:scale-110 transition-transform text-[#008A4B] tabular-nums">
+          {counts.friendly}%
+        </span>
+        <p className="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">
+          Verified Solo &amp; Family Friendly
+        </p>
+      </div>
+
+      {/* 45+ Nationalities Hosted */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-surface-container hover:bg-surface-container-lowest hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 group">
+        <span className="font-display-lg text-headline-lg text-primary font-bold block group-hover:scale-110 transition-transform text-secondary tabular-nums">
+          {counts.nationalities}+
+        </span>
+        <p className="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">
+          Nationalities Hosted
+        </p>
+      </div>
+
+      {/* 0 Hidden Surcharges Ever */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-surface-container hover:bg-surface-container-lowest hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 group">
+        <span className="font-display-lg text-headline-lg text-primary font-bold block group-hover:scale-110 transition-transform text-primary tabular-nums">
+          0
+        </span>
+        <p className="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">
+          Hidden Surcharges Ever
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default function About() {
   const [activeVehicleView, setActiveVehicleView] = useState("exterior"); // 'exterior' | 'interior'
@@ -277,33 +396,8 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Direct Stats Row with Hover Pop */}
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div className="p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-surface-container hover:bg-surface-container-lowest hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 group">
-                  <span className="font-display-lg text-headline-lg text-primary font-bold block group-hover:scale-110 transition-transform text-[#008A4B]">
-                    100%
-                  </span>
-                  <p className="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">
-                    Verified Solo &amp; Family Friendly
-                  </p>
-                </div>
-                <div className="p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-surface-container hover:bg-surface-container-lowest hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 group">
-                  <span className="font-display-lg text-headline-lg text-primary font-bold block group-hover:scale-110 transition-transform text-secondary">
-                    45+
-                  </span>
-                  <p className="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">
-                    Nationalities Hosted
-                  </p>
-                </div>
-                <div className="p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-surface-container hover:bg-surface-container-lowest hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 group">
-                  <span className="font-display-lg text-headline-lg text-primary font-bold block group-hover:scale-110 transition-transform text-primary">
-                    0
-                  </span>
-                  <p className="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">
-                    Hidden Surcharges Ever
-                  </p>
-                </div>
-              </div>
+              {/* Direct Stats Row with Count-Up Animation */}
+              <AboutTrustStats />
             </div>
           </div>
         </div>

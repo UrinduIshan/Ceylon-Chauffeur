@@ -1,7 +1,96 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { DRIVER_INFO } from "../data/constants";
 import Icon from "../components/Icon";
+
+function PunctualMetricChip() {
+  const chipRef = useRef(null);
+  const [percent, setPercent] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    const node = chipRef.current;
+    if (!node) return;
+
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      setHasStarted(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setHasStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setPercent(100);
+      return;
+    }
+
+    let animId;
+    let startTime = null;
+    const DURATION = 1100;
+    const DELAY = 200;
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+
+      if (elapsed < DELAY) {
+        animId = requestAnimationFrame(step);
+        return;
+      }
+
+      const progress = Math.min((elapsed - DELAY) / DURATION, 1);
+      const current = Math.round(easeOutCubic(progress) * 100);
+      setPercent(current);
+
+      if (progress < 1) {
+        animId = requestAnimationFrame(step);
+      } else {
+        setPercent(100);
+      }
+    };
+
+    animId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animId);
+  }, [hasStarted]);
+
+  return (
+    <div
+      ref={chipRef}
+      className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 border border-surface-container transition-all duration-300 group cursor-default"
+    >
+      <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+        <Icon className="text-2xl">verified_user</Icon>
+      </div>
+      <div className="flex flex-col">
+        <span className="font-label-sm text-label-sm text-on-surface-variant">Arrival Assurance</span>
+        <span className="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary transition-colors tabular-nums">
+          {percent}% Punctual
+        </span>
+      </div>
+    </div>
+  );
+}
 
 export default function Contact() {
   const [guestName, setGuestName] = useState("Sarah Jenkins");
@@ -195,17 +284,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 border border-surface-container transition-all duration-300 group cursor-default">
-              <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                <Icon className="text-2xl">verified_user</Icon>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-label-sm text-label-sm text-on-surface-variant">Arrival Assurance</span>
-                <span className="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary transition-colors">
-                  100% Punctual
-                </span>
-              </div>
-            </div>
+            <PunctualMetricChip />
           </div>
         </div>
       </section>

@@ -158,11 +158,10 @@ function ChauffeurStats() {
     <div ref={containerRef} className="grid grid-cols-2 sm:grid-cols-3 gap-4 my-6 w-full">
       {/* 12+ Years */}
       <div
-        className={`p-3.5 rounded-xl transition-all duration-300 cursor-default border ${
-          activeStat === "years"
+        className={`p-3.5 rounded-xl transition-all duration-300 cursor-default border ${activeStat === "years"
             ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
             : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
-        }`}
+          }`}
       >
         <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
           {counts.years}+
@@ -172,11 +171,10 @@ function ChauffeurStats() {
 
       {/* 1,800+ Trips */}
       <div
-        className={`p-3.5 rounded-xl transition-all duration-300 cursor-default border ${
-          activeStat === "trips"
+        className={`p-3.5 rounded-xl transition-all duration-300 cursor-default border ${activeStat === "trips"
             ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
             : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
-        }`}
+          }`}
       >
         <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
           {counts.trips.toLocaleString("en-US")}+
@@ -186,11 +184,10 @@ function ChauffeurStats() {
 
       {/* 100% Punctuality */}
       <div
-        className={`p-3.5 rounded-xl col-span-2 sm:col-span-1 transition-all duration-300 cursor-default border ${
-          activeStat === "punctuality"
+        className={`p-3.5 rounded-xl col-span-2 sm:col-span-1 transition-all duration-300 cursor-default border ${activeStat === "punctuality"
             ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
             : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
-        }`}
+          }`}
       >
         <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
           {counts.punctuality}%
@@ -365,10 +362,11 @@ export default function Home() {
             className="inline-flex flex-col items-center gap-1 text-surface-bright/80 hover:text-surface-bright transition-colors group cursor-pointer"
             aria-label="Scroll to Journey Planner"
           >
+
+            <Icon className="text-2xl group-hover:translate-y-1.5 transition-transform animate-bounce text-secondary-fixed">keyboard_arrow_down</Icon>
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-[11px] font-semibold text-inverse-primary group-hover:text-surface-bright transition-colors">
               Plan Your Journey Below
             </span>
-            <Icon className="text-2xl group-hover:translate-y-1.5 transition-transform animate-bounce text-secondary-fixed">keyboard_arrow_down</Icon>
           </a>
         </div>
       </section>

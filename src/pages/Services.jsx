@@ -180,21 +180,21 @@ export default function Services() {
               {/* Feature Badges with Hover Micro-Interactions */}
               <div className="flex flex-wrap items-center gap-3 pt-2 animate-fade-in-up animation-delay-200">
                 <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-secondary/30 border border-surface-container transition-all duration-300 group cursor-default">
-                  <Icon className="text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>eco</Icon>
+                  <Icon className="text-base text-secondary group-hover:scale-110 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>eco</Icon>
                   <span className="font-label-md text-label-md text-on-surface font-medium">
                     Toyota Hybrid Fleet
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-secondary/30 border border-surface-container transition-all duration-300 group cursor-default">
-                  <Icon className="text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>format_image_left</Icon>
+                  <Icon className="text-base text-secondary group-hover:scale-110 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>format_image_left</Icon>
                   <span className="font-label-md text-label-md text-on-surface font-medium">
                     100% Fixed Rates
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-secondary/30 border border-surface-container transition-all duration-300 group cursor-default">
-                  <Icon className="text-base text-secondary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>support_agent</Icon>
+                  <Icon className="text-base text-secondary group-hover:scale-110 transition-transform duration-300" style={{ fontVariationSettings: "'FILL' 1" }}>support_agent</Icon>
                   <span className="font-label-md text-label-md text-on-surface font-medium">
                     Chauffeur Harindu On-Call
                   </span>
@@ -938,14 +938,14 @@ export default function Services() {
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-2 border border-surface-container hover:border-secondary/30 transition-all duration-300 flex items-start gap-4.5 group relative overflow-hidden cursor-default reveal-on-scroll"
+                className="p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-xl hover:-translate-y-2 border border-surface-container hover:border-secondary/30 transition-all duration-300 flex items-start gap-5 sm:gap-6 group relative overflow-hidden cursor-default reveal-on-scroll"
                 style={{ transitionDelay: `${idx * 80}ms` }}
               >
                 <div className="shine-effect" />
-                <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center shrink-0 text-secondary group-hover:bg-secondary group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center shrink-0 text-secondary group-hover:bg-secondary group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-sm">
                   <Icon className="text-2xl">{feature.icon}</Icon>
                 </div>
-                <div className="flex flex-col gap-1.5 relative z-10">
+                <div className="flex flex-col gap-2 relative z-10">
                   <h3 className="font-title-md text-title-md text-on-surface font-semibold group-hover:text-secondary transition-colors duration-200">
                     {feature.title}
                   </h3>

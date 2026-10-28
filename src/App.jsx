@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import MobileBottomBar from "./components/MobileBottomBar";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -27,7 +26,6 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
-        <FloatingWhatsApp />
         <MobileBottomBar />
         <Footer />
       </div>

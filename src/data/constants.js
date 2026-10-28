@@ -15,6 +15,7 @@ export const DRIVER_INFO = {
   vehicle: "Toyota Prius 3rd Gen (Hybrid Synergy Drive)",
   photo: "/images/chauffeur-harindu.jpg",
   logo: "/images/logo.svg",
+  tripAdvisorUrl: "https://www.tripadvisor.com/",
 };
 
 export const POPULAR_ROUTES_PRICING = {

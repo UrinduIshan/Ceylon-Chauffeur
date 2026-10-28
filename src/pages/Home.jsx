@@ -159,8 +159,8 @@ function ChauffeurStats() {
       {/* 12+ Years */}
       <div
         className={`p-3.5 rounded-xl transition-all duration-300 cursor-default border ${activeStat === "years"
-            ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
-            : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
+          ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
+          : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
           }`}
       >
         <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
@@ -172,8 +172,8 @@ function ChauffeurStats() {
       {/* 1,800+ Trips */}
       <div
         className={`p-3.5 rounded-xl transition-all duration-300 cursor-default border ${activeStat === "trips"
-            ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
-            : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
+          ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
+          : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
           }`}
       >
         <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
@@ -185,8 +185,8 @@ function ChauffeurStats() {
       {/* 100% Punctuality */}
       <div
         className={`p-3.5 rounded-xl col-span-2 sm:col-span-1 transition-all duration-300 cursor-default border ${activeStat === "punctuality"
-            ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
-            : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
+          ? "bg-surface-container border-secondary/50 shadow-md -translate-y-1 scale-[1.02]"
+          : "bg-surface-container-low border-transparent hover:bg-surface-container hover:-translate-y-1 hover:shadow-sm"
           }`}
       >
         <span className="block font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">
@@ -337,13 +337,6 @@ export default function Home() {
           {/* Quick Hero Actions */}
           <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
             <a
-              href="#plan-journey"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-container/90 font-label-lg text-label-lg font-bold shadow-lg hover:shadow-secondary-container/30 transition-all hover:scale-105 active:scale-95 duration-200"
-            >
-              <Icon className="text-xl">commute</Icon>
-              Plan Your Journey
-            </a>
-            <a
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
@@ -351,6 +344,21 @@ export default function Home() {
             >
               <Icon name="whatsapp" className="text-tertiary-fixed text-lg" />
               Book via WhatsApp
+            </a>
+            <a
+              href="#customer-feedbacks"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById("customer-feedbacks");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, "", "#customer-feedbacks");
+                }
+              }}
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-container/90 font-label-lg text-label-lg font-bold shadow-lg hover:shadow-secondary-container/30 transition-all hover:scale-105 active:scale-95 duration-200"
+            >
+              <Icon className="text-xl">commute</Icon>
+              Why us?
             </a>
           </div>
         </div>
@@ -1005,7 +1013,7 @@ export default function Home() {
       </section>
 
       {/* CUSTOMER REVIEWS & INTERNATIONAL TESTIMONIALS (NON-STOP ROTATING MARQUEE) */}
-      <section className="w-full py-20 overflow-hidden bg-surface">
+      <section id="customer-feedbacks" className="w-full py-20 overflow-hidden bg-surface scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14 text-center reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/70 text-secondary text-label-sm font-semibold mb-3">
             <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
@@ -1073,6 +1081,31 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Direct Action Buttons: TripAdvisor & WhatsApp (Always in same row) */}
+        <div className="mt-10 max-w-xl mx-auto px-4 flex flex-row items-center justify-center gap-2.5 sm:gap-4 reveal-on-scroll">
+          {/* Left Button: See Our TripAdvisor */}
+          <a
+            href={DRIVER_INFO.tripAdvisorUrl || "https://www.tripadvisor.com/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 max-w-[250px] inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#00AA6C] hover:bg-[#008f5a] text-white font-label-md text-xs sm:text-label-md font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 text-center whitespace-nowrap"
+          >
+            <Icon name="tripadvisor" className="text-base sm:text-xl shrink-0" />
+            <span>See Our TripAdvisor</span>
+          </a>
+
+          {/* Right Button: WhatsApp */}
+          <a
+            href={`https://wa.me/${DRIVER_INFO.phone.replace("+", "")}?text=${encodeURIComponent("Hello Harindu, I saw your great guest reviews on CeylonDrive and would like to inquire about a chauffeur in Sri Lanka!")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 max-w-[250px] inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-label-md text-xs sm:text-label-md font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 text-center whitespace-nowrap"
+          >
+            <Icon name="whatsapp" className="text-base sm:text-xl shrink-0" />
+            <span>Chat on WhatsApp</span>
+          </a>
         </div>
       </section>
 

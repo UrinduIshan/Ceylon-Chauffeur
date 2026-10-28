@@ -1087,7 +1087,7 @@ export default function Home() {
         <div className="mt-10 max-w-xl mx-auto px-4 flex flex-row items-center justify-center gap-2.5 sm:gap-4 reveal-on-scroll">
           {/* Left Button: See Our TripAdvisor */}
           <a
-            href={DRIVER_INFO.tripAdvisorUrl || "https://www.tripadvisor.com/"}
+            href={DRIVER_INFO.tripAdvisorUrl || "https://www.tripadvisor.co.uk/Attraction_Review-g11913794-d33991663-Reviews-Travel_with_Elan-Nittambuwa_Western_Province.html"}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 max-w-[250px] inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#00AA6C] hover:bg-[#008f5a] text-white font-label-md text-xs sm:text-label-md font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 text-center whitespace-nowrap"

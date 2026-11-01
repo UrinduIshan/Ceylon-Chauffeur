@@ -358,7 +358,7 @@ export default function Home() {
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-container/90 font-label-lg text-label-lg font-bold shadow-lg hover:shadow-secondary-container/30 transition-all hover:scale-105 active:scale-95 duration-200"
             >
               <Icon className="text-xl">commute</Icon>
-              Why us?
+              Why 1000+ travellers trust us?
             </a>
           </div>
         </div>
